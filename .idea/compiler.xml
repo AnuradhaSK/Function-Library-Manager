@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="org.wso2.carbon.function.mgt.stub" />
         <module name="orgwso2carbonfunctionmgt" />
+        <module name="orgwso2carbonfunctionmgtui" />
       </profile>
     </annotationProcessing>
   </component>

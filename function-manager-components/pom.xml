@@ -15,6 +15,8 @@
     <name> WSO2 Carbon - Function Manager Components</name>
     <modules>
         <module>org.wso2.carbon.function.mgt</module>
+        <module>org.wso2.carbon.function.mgt.stub</module>
+        <module>org.wso2.carbon.function.mgt.ui</module>
     </modules>
 
 
