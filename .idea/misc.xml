@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="Osmorc" url="file://$PROJECT_DIR$/function-manager-components/org.wso2.carbon.function.mgt" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/function-manager-components/org.wso2.carbon.function.mgt.stub" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/function-manager-components/org.wso2.carbon.function.mgt.ui" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
