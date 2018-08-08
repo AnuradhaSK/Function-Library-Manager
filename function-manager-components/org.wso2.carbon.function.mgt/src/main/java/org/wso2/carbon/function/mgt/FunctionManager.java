@@ -5,8 +5,8 @@ public class FunctionManager {
 
     public FunctionManager() {
         functions = new Function[2];
-        functions[0] = new Function(1,"function 1");
-        functions[1] = new Function(2,"function 2");
+        functions[0] = new Function("function lib 1");
+        functions[1] = new Function("function lib 2");
     }
 
     public Function[] getFunctions() {

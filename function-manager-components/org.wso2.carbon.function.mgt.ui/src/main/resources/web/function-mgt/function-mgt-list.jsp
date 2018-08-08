@@ -32,14 +32,31 @@
 %>
 <fmt:bundle basename="org.wso2.carbon.function.mgt.ui.i18n.Resources">
     <div id="middle">
-        <h2>Function Management</h2>
+        <h2>Function Library Management</h2>
 
         <div id="workArea">
+
+            <div class="sectionSeperator togglebleTitle"><fmt:message key="title.config.import.functionlibrary"/></a></div>
+
+
+            <div class="toggle_container sectionSub" style="margin-bottom:10px;" id="stepsConfRow">
+                <table>
+                    <tr>
+                        <td><a title="<fmt:message key='import.function.info'/>"
+                               onclick=""
+                               href="#"
+                               class="icon-link"
+                               style="background-image: url(images/import.gif)">
+                            <fmt:message key='import'/>
+                        </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <table class="styledLeft" id="moduleTable">
                 <thead>
                 <tr>
-                    <th width="20%">ID</th>
-                    <th width="40%">Name</th>
+                    <th width="60%">Name</th>
                     <th width="40%">Actions</th>
 
                 </tr>
@@ -49,7 +66,7 @@
                     for(Function function:functions){
                 %>
                 <tr>
-                    <td><%=function.getID()%></td>
+
                     <td><%=function.getName()%></td>
                     <td>
                         <a title="<fmt:message key='edit.function.info'/>"
@@ -73,13 +90,7 @@
                            style="background-image: url(images/export.gif)">
                             <fmt:message key='export'/>
                         </a>
-                        <a title="<fmt:message key='import.function.info'/>"
-                           onclick=""
-                           href="#"
-                           class="icon-link"
-                           style="background-image: url(images/import.gif)">
-                            <fmt:message key='import'/>
-                        </a>
+
                     </td>
 
                 </tr>
