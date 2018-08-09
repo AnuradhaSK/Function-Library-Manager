@@ -71,7 +71,7 @@
                     <td>
                         <a title="<fmt:message key='edit.function.info'/>"
                            onclick=""
-                           href="#"
+                           href="function-mgt-edit.jsp"
                            class="icon-link"
                            style="background-image: url(images/edit.gif)">
                             <fmt:message key='edit'/>
