@@ -1,0 +1,25 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://mgt.function.carbon.wso2.org" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://mgt.function.carbon.wso2.org">
+    <wsdl:documentation>FunctionLibraryManagementAdminService</wsdl:documentation>
+    <wsdl:types/>
+    <wsdl:portType name="FunctionLibraryManagementAdminServicePortType"/>
+    <wsdl:binding name="FunctionLibraryManagementAdminServiceSoap11Binding" type="tns:FunctionLibraryManagementAdminServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    </wsdl:binding>
+    <wsdl:binding name="FunctionLibraryManagementAdminServiceSoap12Binding" type="tns:FunctionLibraryManagementAdminServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    </wsdl:binding>
+    <wsdl:binding name="FunctionLibraryManagementAdminServiceHttpBinding" type="tns:FunctionLibraryManagementAdminServicePortType">
+        <http:binding verb="POST"/>
+    </wsdl:binding>
+    <wsdl:service name="FunctionLibraryManagementAdminService">
+        <wsdl:port name="FunctionLibraryManagementAdminServiceHttpsSoap11Endpoint" binding="tns:FunctionLibraryManagementAdminServiceSoap11Binding">
+            <soap:address location="https://172.17.0.1:9443/services/FunctionLibraryManagementAdminService.FunctionLibraryManagementAdminServiceHttpsSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="FunctionLibraryManagementAdminServiceHttpsSoap12Endpoint" binding="tns:FunctionLibraryManagementAdminServiceSoap12Binding">
+            <soap12:address location="https://172.17.0.1:9443/services/FunctionLibraryManagementAdminService.FunctionLibraryManagementAdminServiceHttpsSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="FunctionLibraryManagementAdminServiceHttpsEndpoint" binding="tns:FunctionLibraryManagementAdminServiceHttpBinding">
+            <http:address location="https://172.17.0.1:9443/services/FunctionLibraryManagementAdminService.FunctionLibraryManagementAdminServiceHttpsEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

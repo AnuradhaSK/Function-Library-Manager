@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1534849743731
+Build-Jdk: 1.8.0_181
+Built-By: anuradha
+Bundle-ManifestVersion: 2
+Bundle-Name: org.wso2.carbon.function.mgt
+Bundle-SymbolicName: org.wso2.carbon.function.mgt
+Bundle-Version: 4.4.11
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.wso2.carbon.function.mgt;uses:="org.wso2.carbon.func
+ tion.mgt.dao,org.wso2.carbon.function.mgt.model";version="4.4.11",org.w
+ so2.carbon.function.mgt.dao;uses:="org.wso2.carbon.function.mgt.model";
+ version="4.4.11",org.wso2.carbon.function.mgt.dao.impl;uses:="org.wso2.
+ carbon.function.mgt.dao,org.wso2.carbon.function.mgt.model";version="4.
+ 4.11",org.wso2.carbon.function.mgt.internal;uses:="javax.sql";version="
+ 4.4.11",org.wso2.carbon.function.mgt.model;version="4.4.11",org.wso2.ca
+ rbon.function.mgt.util;uses:="org.wso2.carbon.database.utils.jdbc";vers
+ ion="4.4.11"
+Import-Package: javax.sql,org.apache.commons.logging;version="[1.2,2)",o
+ rg.wso2.carbon.database.utils.jdbc;version="[2.0,3)",org.wso2.carbon.fu
+ nction.mgt.dao,org.wso2.carbon.function.mgt.dao.impl,org.wso2.carbon.fu
+ nction.mgt.internal,org.wso2.carbon.function.mgt.model,org.wso2.carbon.
+ function.mgt.util,org.wso2.carbon.identity.core.util;version="[5.12,6)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Tool: Bnd-3.5.0.201709291849

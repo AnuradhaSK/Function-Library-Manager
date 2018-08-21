@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.wso2.carbon</groupId>
-    <artifactId>function-manager</artifactId>
+    <artifactId>function-lib-manager</artifactId>
     <version>4.4.11</version>
     <modules>
         <module>function-manager-components</module>
@@ -53,6 +53,18 @@
             </releases>
         </repository>
     </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>org.wso2.carbon.utils</groupId>
+            <artifactId>org.wso2.carbon.database.utils</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.identity.framework</groupId>
+            <artifactId>org.wso2.carbon.identity.core</artifactId>
+            <version>5.12.54</version>
+        </dependency>
+    </dependencies>
 
     <pluginRepositories>
         <pluginRepository>
@@ -89,4 +101,7 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
+
+
+
 </project>
