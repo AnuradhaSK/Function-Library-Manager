@@ -64,7 +64,27 @@
             return false;
         }
     }
-
+    var openFile = function (event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var data = reader.result;
+            document.getElementById('functionlib-file-content').value = data;
+        };
+        document.getElementById('functionlib-file-name').value = input.files[0].name;
+        reader.readAsText(input.files[0]);
+    };
+    function importFunctionLibOnclick()() {
+        
+    }
+    function showManual() {
+        $("#add-functionlib-form").show();
+        $("#upload-functionlib-form").hide();
+    }
+    function showFile() {
+        $("#add-functionlib-form").hide();
+        $("#upload-functionlib-form").show();
+    }
 
 
 
@@ -74,7 +94,30 @@
     <div id="workArea">
     <div id="middle">
         <h2>Add New Function Library</h2>
+        <table class="styledLeft" width="100%">
+            <thead>
+            <tr>
+                <th><fmt:message key="title.functionlib.select.mode"/></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="radio" id="manual-option" name="upload-type-selector" checked="checked"
+                           onclick="showManual();">
+                    <label for="manual-option">Manual Configuration</label>
+                </td>
 
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" id="file-option" name="upload-type-selector" onclick="showFile();">
+                    <label for="file-option">File Configuration</label>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+        <br/>
         <form id="add-functionlib-form" name="add-functionlib-form" method="post"
               action="add-functionlib-finish-ajaxprocessor.jsp">
             <div class="sectionSeperator togglebleTitle"><fmt:message key='title.config.function.basic.config'/></div>
@@ -123,6 +166,33 @@
             <input type="button" value="<fmt:message key='button.cancel'/>"
                    javascript:location.href='function-mgt-add.jsp'/>
         </div>
+        </form>
+
+        <form id="upload-functionlib-form" name="upload-functionlib-form" method="post"
+              action="#">
+            <table class="styledLeft" width="100%">
+                <thead>
+                <tr>
+                    <th><fmt:message key="upload.function.library.file"/></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <span>File Location: </span><input type="file" class="button" id="functionlib_file" name="functionlib_file" onchange='openFile(event)'/>
+                    </td>
+                    <textarea hidden="hidden" name="functionlib-file-content" id="functionlib-file-content"></textarea>
+                    <textarea hidden="hidden" name="functionlib-file-name" id="functionlib-file-name"></textarea>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="button"  value="<fmt:message key='button.import.function.library'/>"
+                               onclick="importFunctionLibOnclick();"/>
+                        <input type="button" class="button" onclick="javascript:location.href='function-mgt-list.jsp'" value="<fmt:message key='button.cancel'/>" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </form>
     </div>
     </div>

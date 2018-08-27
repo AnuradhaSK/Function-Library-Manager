@@ -4,14 +4,8 @@ public class FunctionLibrary {
 
     private String functionLibraryName;
     private String description;
+    private String content;
 
-    public FunctionLibrary(String functionLibraryName) {
-        this.functionLibraryName = functionLibraryName;
-    }
-
-    public FunctionLibrary() {
-
-    }
 
     /**
      * Get function library name.
@@ -47,6 +41,24 @@ public class FunctionLibrary {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Get function library script.
+     *
+     * @return content
+     */
+    public String getFunctionLibraryScript() {
+        return content;
+    }
+
+    /**
+     * Set function library script.
+     *
+     * @param content content
+     */
+    public void setFunctionLibraryScript(String content) {
+        this.content = content;
     }
 
 }

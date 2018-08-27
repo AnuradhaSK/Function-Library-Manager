@@ -39,7 +39,7 @@
             <div class="sectionSeperator togglebleTitle"><fmt:message key="title.config.import.functionlibrary"/></a></div>
 
 
-            <div class="toggle_container sectionSub" style="margin-bottom:10px;" id="stepsConfRow">
+           <!-- <div class="toggle_container sectionSub" style="margin-bottom:10px;" id="stepsConfRow">
                 <table>
                     <tr>
                         <td><a title="<fmt:message key='import.function.info'/>"
@@ -52,7 +52,7 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+            </div>-->
             <table class="styledLeft" id="moduleTable">
                 <thead>
                 <tr>

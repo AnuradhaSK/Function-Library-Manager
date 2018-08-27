@@ -31,9 +31,9 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
 
     }
 
-    public FunctionLibraryDAO getFunctionLibraryDAO() {
-
-        FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
-        return functionLibraryDAO;
-    }
+//    public FunctionLibraryDAO getFunctionLibraryDAO() {
+//
+//        FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
+//        return functionLibraryDAO;
+//    }
 }
