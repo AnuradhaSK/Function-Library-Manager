@@ -5,7 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.function.mgt.dao.FunctionLibraryDAO;
 import org.wso2.carbon.function.mgt.dao.impl.FunctionLibraryDAOImpl;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
-import org.wso2.carbon.identity.core.util.IdentityTenantUtil;
 
 public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagementService {
 
@@ -28,12 +27,9 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
     }
 
     public void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain) {
-
+        FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
+        functionLibraryDAO.createFunctionLibrary(functionLibrary,tenantDomain);
     }
 
-//    public FunctionLibraryDAO getFunctionLibraryDAO() {
-//
-//        FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
-//        return functionLibraryDAO;
-//    }
+
 }

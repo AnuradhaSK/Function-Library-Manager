@@ -11,7 +11,8 @@ import org.wso2.carbon.function.mgt.FunctionLibraryManagementService;
 import org.wso2.carbon.function.mgt.FunctionLibraryManagementServiceImpl;
 
 @Component(
-        name = "function.library.management.service"
+        name = "function.library.management.service",
+        immediate = true
 )
 public class FunctionLibraryManagementServiceComponent {
     private static Log log = LogFactory.getLog(FunctionLibraryManagementServiceComponent.class);

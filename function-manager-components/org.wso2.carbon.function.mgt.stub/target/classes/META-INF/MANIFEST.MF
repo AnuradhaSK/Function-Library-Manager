@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1534849744939
+Bnd-LastModified: 1535453878902
 Build-Jdk: 1.8.0_181
 Built-By: anuradha
 Bundle-ManifestVersion: 2
@@ -8,4 +8,8 @@ Bundle-SymbolicName: org.wso2.carbon.function.mgt.stub
 Bundle-Version: 4.4.11
 Created-By: Apache Maven Bundle Plugin
 DynamicImport-Package: *
-Tool: Bnd-3.5.0.201709291849
+Export-Package: org.wso2.carbon.function.mgt;uses:="org.wso2.carbon.func
+ tion.mgt.model.xsd";version="4.4.11",org.wso2.carbon.function.mgt.model
+ .xsd;version="4.4.11",org.wso2.carbon.function.mgt.stub;uses:="org.wso2
+ .carbon.function.mgt.model.xsd";version="4.4.11"
+Tool: Bnd-2.1.0.20130426-122213

@@ -4,9 +4,11 @@
             <transport>https</transport>
         </transports>
         <parameter name="ServiceClass">org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminService</parameter>
-    </service>
 
+    <operation name="createFunctionLibrary">
+    </operation>
     <parameter name="adminService" locked="true">true</parameter>
     <parameter name="hiddenService" locked="true">true</parameter>
     <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
+    </service>
 </serviceGroup>

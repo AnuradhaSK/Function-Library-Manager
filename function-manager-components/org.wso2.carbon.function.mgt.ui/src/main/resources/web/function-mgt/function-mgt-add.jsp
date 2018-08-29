@@ -47,7 +47,7 @@
         var functionLibName = document.getElementById("functionLibName").value;
         var description = document.getElementById("functionLib-description").value;
         if( functionLibName == '') {
-            CARBON.showWarningDialog('Please provide function library ID');
+            CARBON.showWarningDialog('Please provide function library Name');
             location.href = '#';
         } else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
             return false;
@@ -74,7 +74,7 @@
         document.getElementById('functionlib-file-name').value = input.files[0].name;
         reader.readAsText(input.files[0]);
     };
-    function importFunctionLibOnclick()() {
+    function importFunctionLibOnclick() {
         
     }
     function showManual() {
@@ -86,14 +86,17 @@
         $("#upload-functionlib-form").show();
     }
 
-
+    window.onload = function() {
+        showManual();
+    }
 
 </script>
 
 <fmt:bundle basename="org.wso2.carbon.function.mgt.ui.i18n.Resources">
-    <div id="workArea">
+
     <div id="middle">
         <h2>Add New Function Library</h2>
+        <div id="workArea">
         <table class="styledLeft" width="100%">
             <thead>
             <tr>

@@ -43,14 +43,15 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
             addFunctionLibStmt.setInt(4, tenantID);
             setBlobValue(functionLibrary.getFunctionLibraryScript(),addFunctionLibStmt,5);
             addFunctionLibStmt.execute();
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         finally {
-            IdentityDatabaseUtil.closeStatement(addFunctionLibStmt);
-            IdentityDatabaseUtil.closeConnection(connection);
+            //IdentityDatabaseUtil.closeStatement(addFunctionLibStmt);
+            //IdentityDatabaseUtil.closeConnection(connection);
         }
 
 

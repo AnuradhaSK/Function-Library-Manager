@@ -1,11 +1,9 @@
 org/wso2/carbon/function/mgt/FunctionLibraryManagementServiceImpl.class
+org/wso2/carbon/function/mgt/internal/FunctionLibraryManagementServiceComponent.class
 org/wso2/carbon/function/mgt/FunctionLibraryMgtUtil.class
 org/wso2/carbon/function/mgt/FunctionLibraryManagementAdminService.class
 org/wso2/carbon/function/mgt/FunctionLibraryManagementService.class
 org/wso2/carbon/function/mgt/dao/FunctionLibraryDAO.class
-org/wso2/carbon/function/mgt/internal/FunctionLibraryManagementComponent.class
 org/wso2/carbon/function/mgt/model/FunctionLibrary.class
-org/wso2/carbon/function/mgt/util/JdbcUtils.class
 org/wso2/carbon/function/mgt/dao/impl/FunctionLibraryDAOImpl.class
 org/wso2/carbon/function/mgt/FunctionLibMgtDBQueries.class
-org/wso2/carbon/function/mgt/internal/FunctionLibraryManagementComponentDataHolder.class
