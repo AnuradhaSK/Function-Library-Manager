@@ -26,7 +26,7 @@
          
                      public void createFunctionLibrary(
 
-                        org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary2,java.lang.String tenantDomain3)
+                        org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary2)
                         throws java.rmi.RemoteException
              ;
 
@@ -39,7 +39,7 @@
           */
         public void startcreateFunctionLibrary(
 
-            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary2,java.lang.String tenantDomain3,
+            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary2,
 
             final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 

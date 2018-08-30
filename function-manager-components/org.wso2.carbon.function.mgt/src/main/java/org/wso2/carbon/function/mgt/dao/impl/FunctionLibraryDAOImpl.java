@@ -50,8 +50,8 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
             e.printStackTrace();
         }
         finally {
-            //IdentityDatabaseUtil.closeStatement(addFunctionLibStmt);
-            //IdentityDatabaseUtil.closeConnection(connection);
+            IdentityDatabaseUtil.closeStatement(addFunctionLibStmt);
+            IdentityDatabaseUtil.closeConnection(connection);
         }
 
 

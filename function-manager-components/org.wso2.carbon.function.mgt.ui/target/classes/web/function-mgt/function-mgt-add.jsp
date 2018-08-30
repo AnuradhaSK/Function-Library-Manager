@@ -47,10 +47,10 @@
         var functionLibName = document.getElementById("functionLibName").value;
         var description = document.getElementById("functionLib-description").value;
         if( functionLibName == '') {
-            CARBON.showWarningDialog('Please provide function library ID');
+            CARBON.showWarningDialog('Please provide function library Name');
             location.href = '#';
-        } else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
-            return false;
+       /* } else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
+            return false;*/
         }else {
             $("#add-functionlib-form").submit();
             return true;

@@ -133,7 +133,7 @@
                      * Auto generated method signature
                      * 
                      * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#createFunctionLibrary
-                     * @param createFunctionLibrary5
+                     * @param createFunctionLibrary4
                     
                      */
 
@@ -141,7 +141,7 @@
 
                             public  void createFunctionLibrary(
 
-                            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary6,java.lang.String tenantDomain7)
+                            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary5)
                         
 
                     throws java.rmi.RemoteException
@@ -167,8 +167,7 @@
               org.apache.axiom.soap.SOAPEnvelope env = null;
                     org.wso2.carbon.function.mgt.CreateFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibrary6,
-                                                    tenantDomain7,
+                                                    functionLibrary5,
                                                     dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "createFunctionLibrary")));
@@ -243,12 +242,12 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startcreateFunctionLibrary
-                    * @param createFunctionLibrary5
+                    * @param createFunctionLibrary4
                 
                 */
                 public  void startcreateFunctionLibrary(
 
-                 org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary6,java.lang.String tenantDomain7,
+                 org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary5,
 
                   final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 
@@ -272,8 +271,7 @@
                                     //Style is Doc.
                                     org.wso2.carbon.function.mgt.CreateFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibrary6,
-                                                    tenantDomain7,
+                                                    functionLibrary5,
                                                      dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "createFunctionLibrary")));
@@ -352,7 +350,6 @@
                                     
                                 private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory,
                                     org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary param1,
-                                    java.lang.String param2,
                                     org.wso2.carbon.function.mgt.CreateFunctionLibrary dummyWrappedType,
                                  boolean optimizeContent) throws org.apache.axis2.AxisFault{
 
@@ -361,8 +358,6 @@
 
                                  
                                               wrappedType.setFunctionLibrary(param1);
-                                         
-                                              wrappedType.setTenantDomain(param2);
                                          
 
                                org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();

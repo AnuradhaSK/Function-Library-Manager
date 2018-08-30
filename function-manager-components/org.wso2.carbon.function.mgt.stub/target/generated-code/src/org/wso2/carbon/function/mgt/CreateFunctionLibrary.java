@@ -67,48 +67,6 @@
                                }
                             
 
-                        /**
-                        * field for TenantDomain
-                        */
-
-                        
-                                    protected java.lang.String localTenantDomain ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localTenantDomainTracker = false ;
-
-                           public boolean isTenantDomainSpecified(){
-                               return localTenantDomainTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return java.lang.String
-                           */
-                           public  java.lang.String getTenantDomain(){
-                               return localTenantDomain;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param TenantDomain
-                               */
-                               public void setTenantDomain(java.lang.String param){
-                            localTenantDomainTracker = true;
-                                   
-                                            this.localTenantDomain=param;
-                                    
-
-                               }
-                            
-
      
      
         /**
@@ -179,25 +137,7 @@
                                      localFunctionLibrary.serialize(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org","functionLibrary"),
                                         xmlWriter);
                                     }
-                                } if (localTenantDomainTracker){
-                                    namespace = "http://mgt.function.carbon.wso2.org";
-                                    writeStartElement(null, namespace, "tenantDomain", xmlWriter);
-                             
-
-                                          if (localTenantDomain==null){
-                                              // write the nil attribute
-                                              
-                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localTenantDomain);
-                                            
-                                          }
-                                    
-                                   xmlWriter.writeEndElement();
-                             }
+                                }
                     xmlWriter.writeEndElement();
                
 
@@ -384,13 +324,7 @@
                             
                                     elementList.add(localFunctionLibrary==null?null:
                                     localFunctionLibrary);
-                                } if (localTenantDomainTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
-                                                                      "tenantDomain"));
-                                 
-                                         elementList.add(localTenantDomain==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTenantDomain));
-                                    }
+                                }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -484,34 +418,6 @@
                                               
                                         reader.next();
                                     }
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org","tenantDomain").equals(reader.getName())){
-                                
-                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
-                                    
-
-                                    java.lang.String content = reader.getElementText();
-                                    
-                                              object.setTenantDomain(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-                                            
-                                       } else {
-                                           
-                                           
-                                           reader.getElementText(); // throw away text nodes if any.
-                                       }
-                                      
-                                        reader.next();
-                                    
                               }  // End of if for expected property start element
                                 
                                     else {
