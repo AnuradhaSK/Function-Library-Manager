@@ -42,7 +42,7 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
             addFunctionLibStmt.setString(3, "authentication");
             addFunctionLibStmt.setInt(4, tenantID);
             setBlobValue(functionLibrary.getFunctionLibraryScript(),addFunctionLibStmt,5);
-            addFunctionLibStmt.execute();
+            addFunctionLibStmt.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();

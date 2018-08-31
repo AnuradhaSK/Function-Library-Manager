@@ -3,12 +3,16 @@
         <transports>
             <transport>https</transport>
         </transports>
+        <schema schemaNamespace="http://org.apache.axis2/xsd" elementFormDefaultQualified="true" />
+        <description>Function library related functionality</description>
         <parameter name="ServiceClass">org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminService</parameter>
 
     <operation name="createFunctionLibrary">
+        <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
     </operation>
     <parameter name="adminService" locked="true">true</parameter>
-    <parameter name="hiddenService" locked="true">true</parameter>
-    <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
+
+
     </service>
+    <parameter name="hiddenService" locked="true">true</parameter>
 </serviceGroup>

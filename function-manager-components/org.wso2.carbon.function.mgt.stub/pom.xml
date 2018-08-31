@@ -88,7 +88,7 @@
                                 <java classname="org.apache.axis2.wsdl.WSDL2Java" fork="true">
                                     <classpath refid="wsdl2java.classpath" />
                                     <arg line="-uri src/main/resources/FunctionLibraryManagementAdminService.wsdl -u -uw
-   									 -o target/generated-code -p org.wso2.carbon.function.mgt.stub"/>
+   									 -o target/generated-code -p org.wso2.carbon.function.mgt.stub -ns2p http://org.apache.axis2/xsd=org.wso2.carbon.function.mgt"/>
                                 </java>
                             </tasks>
                         </configuration>

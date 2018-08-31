@@ -1,8 +1,0 @@
-org/wso2/carbon/function/mgt/ExtensionMapper.class
-org/wso2/carbon/function/mgt/model/xsd/FunctionLibrary$Factory.class
-org/wso2/carbon/function/mgt/stub/FunctionLibraryManagementAdminServiceStub.class
-org/wso2/carbon/function/mgt/stub/FunctionLibraryManagementAdminService.class
-org/wso2/carbon/function/mgt/model/xsd/FunctionLibrary.class
-org/wso2/carbon/function/mgt/CreateFunctionLibrary$Factory.class
-org/wso2/carbon/function/mgt/CreateFunctionLibrary.class
-org/wso2/carbon/function/mgt/stub/FunctionLibraryManagementAdminServiceCallbackHandler.class
