@@ -10,6 +10,32 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="getAllFunctionLibraries">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAllFunctionLibrariesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax2161:FunctionLibrary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="loadFunctionLibrary">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="functionLibraryName" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="loadFunctionLibraryResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax2161:FunctionLibrary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:schema>
         <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model.mgt.function.carbon.wso2.org/xsd">
             <xs:complexType name="FunctionLibrary">
@@ -25,16 +51,54 @@
         <wsdl:part name="parameters" element="ns1:createFunctionLibrary"/>
     </wsdl:message>
     <wsdl:message name="createFunctionLibraryResponse"/>
+    <wsdl:message name="loadFunctionLibraryRequest">
+        <wsdl:part name="parameters" element="ns1:loadFunctionLibrary"/>
+    </wsdl:message>
+    <wsdl:message name="loadFunctionLibraryResponse">
+        <wsdl:part name="parameters" element="ns1:loadFunctionLibraryResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAllFunctionLibrariesRequest">
+        <wsdl:part name="parameters" element="ns1:getAllFunctionLibraries"/>
+    </wsdl:message>
+    <wsdl:message name="getAllFunctionLibrariesResponse">
+        <wsdl:part name="parameters" element="ns1:getAllFunctionLibrariesResponse"/>
+    </wsdl:message>
     <wsdl:portType name="FunctionLibraryManagementAdminServicePortType">
         <wsdl:operation name="createFunctionLibrary">
             <wsdl:input message="tns:createFunctionLibraryRequest" wsaw:Action="urn:createFunctionLibrary"/>
             <wsdl:output message="tns:createFunctionLibraryResponse" wsaw:Action="urn:createFunctionLibraryResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="loadFunctionLibrary">
+            <wsdl:input message="tns:loadFunctionLibraryRequest" wsaw:Action="urn:loadFunctionLibrary"/>
+            <wsdl:output message="tns:loadFunctionLibraryResponse" wsaw:Action="urn:loadFunctionLibraryResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAllFunctionLibraries">
+            <wsdl:input message="tns:getAllFunctionLibrariesRequest" wsaw:Action="urn:getAllFunctionLibraries"/>
+            <wsdl:output message="tns:getAllFunctionLibrariesResponse" wsaw:Action="urn:getAllFunctionLibrariesResponse"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="FunctionLibraryManagementAdminServiceSoap11Binding" type="tns:FunctionLibraryManagementAdminServicePortType">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <wsdl:operation name="createFunctionLibrary">
             <soap:operation soapAction="urn:createFunctionLibrary" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="loadFunctionLibrary">
+            <soap:operation soapAction="urn:loadFunctionLibrary" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllFunctionLibraries">
+            <soap:operation soapAction="urn:getAllFunctionLibraries" style="document"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -54,11 +118,47 @@
                 <soap12:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="loadFunctionLibrary">
+            <soap12:operation soapAction="urn:loadFunctionLibrary" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllFunctionLibraries">
+            <soap12:operation soapAction="urn:getAllFunctionLibraries" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
     </wsdl:binding>
     <wsdl:binding name="FunctionLibraryManagementAdminServiceHttpBinding" type="tns:FunctionLibraryManagementAdminServicePortType">
         <http:binding verb="POST"/>
         <wsdl:operation name="createFunctionLibrary">
             <http:operation location="createFunctionLibrary"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="loadFunctionLibrary">
+            <http:operation location="loadFunctionLibrary"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllFunctionLibraries">
+            <http:operation location="getAllFunctionLibraries"/>
             <wsdl:input>
                 <mime:content type="text/xml" part="parameters"/>
             </wsdl:input>

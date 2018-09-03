@@ -10,4 +10,8 @@ public abstract class FunctionLibraryManagementService {
 
     public abstract void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain);
 
+    public abstract FunctionLibrary[] getAllFunctionLibraries(String tenantDomain);
+
+    public abstract  FunctionLibrary loadFunctionLibrary(String functionLibraryName, String tenantDomain);
+
 }

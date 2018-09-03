@@ -15,7 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 
 public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
@@ -79,16 +79,14 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
             getFunctionLibStmt.setString(2, functionLibraryName);
             resultSet = getFunctionLibStmt.executeQuery();
             if(resultSet.next()){
-                functionlib.setFunctionLibraryName(resultSet.getString(1));
-                functionlib.setDescription(resultSet.getString(2));
-                functionlib.setFunctionLibraryScript(getBlobValue((InputStream) resultSet.getBlob(4)));
+                functionlib.setFunctionLibraryName(resultSet.getString("NAME"));
+                functionlib.setDescription(resultSet.getString("DESCRIPTION"));
+                functionlib.setFunctionLibraryScript(resultSet.getString("DATA"));
 
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+        }  finally {
             IdentityDatabaseUtil.closeStatement(getFunctionLibStmt);
             IdentityDatabaseUtil.closeResultSet(resultSet);
             IdentityDatabaseUtil.closeConnection(connection);
@@ -97,7 +95,7 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
 
     }
 
-    public List<FunctionLibrary> getAllFunctionLibraries(String tenantDomain) {
+    public FunctionLibrary[] getAllFunctionLibraries(String tenantDomain) {
         int tenantID = MultitenantConstants.INVALID_TENANT_ID;
 
         if (tenantDomain != null) {
@@ -107,7 +105,7 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
         PreparedStatement getFunctionLibrariesStmt = null;
         ResultSet functionLibsResultSet = null;
 
-        List<FunctionLibrary> functionLibraries = null;
+        ArrayList<FunctionLibrary> functionLibraries = new ArrayList<>();
 
         try {
             getFunctionLibrariesStmt = connection.prepareStatement(FunctionLibMgtDBQueries.LOAD_FUNCTIONLIB_FROM_TENANTID);
@@ -115,22 +113,20 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
             functionLibsResultSet = getFunctionLibrariesStmt.executeQuery();
             while (functionLibsResultSet.next()){
                 FunctionLibrary functionlib=new FunctionLibrary();
-                functionlib.setFunctionLibraryName(functionLibsResultSet.getString(1));
-                functionlib.setDescription(functionLibsResultSet.getString(2));
-                functionlib.setFunctionLibraryScript(getBlobValue((InputStream) functionLibsResultSet.getBlob(4)));
+                functionlib.setFunctionLibraryName(functionLibsResultSet.getString("NAME"));
+                functionlib.setDescription(functionLibsResultSet.getString("DESCRIPTION"));
+                functionlib.setFunctionLibraryScript(functionLibsResultSet.getString("DATA"));
                 functionLibraries.add(functionlib);
             }
             connection.commit();
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
             e.printStackTrace();
         } finally {
             IdentityDatabaseUtil.closeStatement(getFunctionLibrariesStmt);
             IdentityDatabaseUtil.closeResultSet(functionLibsResultSet);
             IdentityDatabaseUtil.closeConnection(connection);
         }
-        return functionLibraries;
+        return functionLibraries.toArray(new FunctionLibrary[functionLibraries.size()]);
 
     }
 

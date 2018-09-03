@@ -46,4 +46,13 @@ public class FunctionLibraryManagementServiceClient {
 
     }
 
+    public FunctionLibrary[] getAllFunctionLibraries(){
+        try {
+            return stub.getAllFunctionLibraries();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return new FunctionLibrary[0];
+    }
+
 }

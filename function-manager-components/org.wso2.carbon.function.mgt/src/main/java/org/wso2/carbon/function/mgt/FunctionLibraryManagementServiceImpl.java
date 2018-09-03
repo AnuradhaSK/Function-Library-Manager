@@ -6,6 +6,8 @@ import org.wso2.carbon.function.mgt.dao.FunctionLibraryDAO;
 import org.wso2.carbon.function.mgt.dao.impl.FunctionLibraryDAOImpl;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 
+import java.util.List;
+
 public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagementService {
 
     private static final Log log = LogFactory.getLog(FunctionLibraryManagementServiceImpl.class);
@@ -28,8 +30,18 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
 
     public void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain) {
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
-        functionLibraryDAO.createFunctionLibrary(functionLibrary,tenantDomain);
+        functionLibraryDAO.createFunctionLibrary(functionLibrary, tenantDomain);
     }
 
+    public FunctionLibrary[] getAllFunctionLibraries(String tenantDomain) {
+        FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
+        return functionLibraryDAO.getAllFunctionLibraries(tenantDomain);
+
+    }
+
+    public FunctionLibrary  loadFunctionLibrary(String functionLibraryName, String tenantDomain){
+        FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
+        return functionLibraryDAO.loadFunctionLibrary(functionLibraryName,tenantDomain);
+    }
 
 }

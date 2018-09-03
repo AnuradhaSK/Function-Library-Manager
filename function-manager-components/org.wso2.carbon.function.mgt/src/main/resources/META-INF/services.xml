@@ -7,11 +7,18 @@
         <description>Function library related functionality</description>
         <parameter name="ServiceClass">org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminService</parameter>
 
-    <operation name="createFunctionLibrary">
-        <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
-    </operation>
-    <parameter name="adminService" locked="true">true</parameter>
+        <operation name="createFunctionLibrary">
+           <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
+        </operation>
 
+        <operation name="getAllFunctionLibraries">
+            <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
+        </operation>
+
+        <operation name="loadFunctionLibrary">
+            <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
+        </operation>
+    <parameter name="adminService" locked="true">true</parameter>
 
     </service>
     <parameter name="hiddenService" locked="true">true</parameter>
