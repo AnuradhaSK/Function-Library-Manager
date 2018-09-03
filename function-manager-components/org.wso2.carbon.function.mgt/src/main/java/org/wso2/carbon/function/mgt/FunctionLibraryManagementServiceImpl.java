@@ -44,4 +44,9 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
         return functionLibraryDAO.loadFunctionLibrary(functionLibraryName,tenantDomain);
     }
 
+    public void deleteFunctionLibrary(String functionLibraryName, String tenantDomain){
+        FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
+        functionLibraryDAO.deleteFunctionLibrary(functionLibraryName,tenantDomain);
+    }
+
 }

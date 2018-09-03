@@ -18,8 +18,11 @@
         <operation name="loadFunctionLibrary">
             <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
         </operation>
-    <parameter name="adminService" locked="true">true</parameter>
 
+        <operation name="deleteFunctionLibrary">
+            <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
+        </operation>
+    <parameter name="adminService" locked="true">true</parameter>
     </service>
     <parameter name="hiddenService" locked="true">true</parameter>
 </serviceGroup>

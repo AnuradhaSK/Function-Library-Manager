@@ -14,4 +14,5 @@ public abstract class FunctionLibraryManagementService {
 
     public abstract  FunctionLibrary loadFunctionLibrary(String functionLibraryName, String tenantDomain);
 
+    public abstract void deleteFunctionLibrary(String functionLibraryName, String tenantDomain);
 }

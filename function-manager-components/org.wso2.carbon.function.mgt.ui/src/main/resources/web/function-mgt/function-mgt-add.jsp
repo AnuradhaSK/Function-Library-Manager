@@ -163,8 +163,7 @@
         <div style="clear:both"></div>
         <div class="buttonRow" style=" margin-top: 10px;">
             <input id="createLib" type="button" value="<fmt:message key='button.reg.function.manager'/>"  onclick="createFunctionLibOnclick()"/>
-            <input type="button" value="<fmt:message key='button.cancel'/>"
-                   javascript:location.href='function-mgt-add.jsp'/>
+            <input type="button" onclick="javascript:location.href='function-mgt-list.jsp'" value="<fmt:message key='button.cancel'/>" />
         </div>
         </form>
 

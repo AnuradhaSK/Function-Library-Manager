@@ -22,6 +22,13 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="deleteFunctionLibrary">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="functionLibraryName" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="loadFunctionLibrary">
                 <xs:complexType>
                     <xs:sequence>
@@ -51,6 +58,10 @@
         <wsdl:part name="parameters" element="ns1:createFunctionLibrary"/>
     </wsdl:message>
     <wsdl:message name="createFunctionLibraryResponse"/>
+    <wsdl:message name="deleteFunctionLibraryRequest">
+        <wsdl:part name="parameters" element="ns1:deleteFunctionLibrary"/>
+    </wsdl:message>
+    <wsdl:message name="deleteFunctionLibraryResponse"/>
     <wsdl:message name="loadFunctionLibraryRequest">
         <wsdl:part name="parameters" element="ns1:loadFunctionLibrary"/>
     </wsdl:message>
@@ -68,6 +79,10 @@
             <wsdl:input message="tns:createFunctionLibraryRequest" wsaw:Action="urn:createFunctionLibrary"/>
             <wsdl:output message="tns:createFunctionLibraryResponse" wsaw:Action="urn:createFunctionLibraryResponse"/>
         </wsdl:operation>
+        <wsdl:operation name="deleteFunctionLibrary">
+            <wsdl:input message="tns:deleteFunctionLibraryRequest" wsaw:Action="urn:deleteFunctionLibrary"/>
+            <wsdl:output message="tns:deleteFunctionLibraryResponse" wsaw:Action="urn:deleteFunctionLibraryResponse"/>
+        </wsdl:operation>
         <wsdl:operation name="loadFunctionLibrary">
             <wsdl:input message="tns:loadFunctionLibraryRequest" wsaw:Action="urn:loadFunctionLibrary"/>
             <wsdl:output message="tns:loadFunctionLibraryResponse" wsaw:Action="urn:loadFunctionLibraryResponse"/>
@@ -81,6 +96,15 @@
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
         <wsdl:operation name="createFunctionLibrary">
             <soap:operation soapAction="urn:createFunctionLibrary" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFunctionLibrary">
+            <soap:operation soapAction="urn:deleteFunctionLibrary" style="document"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>
@@ -118,6 +142,15 @@
                 <soap12:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="deleteFunctionLibrary">
+            <soap12:operation soapAction="urn:deleteFunctionLibrary" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
         <wsdl:operation name="loadFunctionLibrary">
             <soap12:operation soapAction="urn:loadFunctionLibrary" style="document"/>
             <wsdl:input>
@@ -141,6 +174,15 @@
         <http:binding verb="POST"/>
         <wsdl:operation name="createFunctionLibrary">
             <http:operation location="createFunctionLibrary"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFunctionLibrary">
+            <http:operation location="deleteFunctionLibrary"/>
             <wsdl:input>
                 <mime:content type="text/xml" part="parameters"/>
             </wsdl:input>

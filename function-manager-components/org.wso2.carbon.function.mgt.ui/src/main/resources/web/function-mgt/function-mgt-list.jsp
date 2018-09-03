@@ -18,6 +18,9 @@
                        resourceBundle="org.wso2.carbon.function.mgt.ui.i18n.Resources"
                        topPage="true" request="<%=request%>"/>
 
+    <script type="text/javascript" src="../carbon/admin/js/breadcrumbs.js"></script>
+    <script type="text/javascript" src="../carbon/admin/js/cookies.js"></script>
+    <script type="text/javascript" src="../carbon/admin/js/main.js"></script>
     <div id="middle">
 
         <h2>
@@ -25,6 +28,33 @@
         </h2>
 
         <div id="workArea">
+
+            <script type="text/javascript">
+                function removeItem(functionLibraryName) {
+                    function doDelete() {
+
+                        var functionLibName = functionLibraryName;
+                        console.log(functionLibName);
+                        $.ajax({
+                            type: 'POST',
+                            url: 'remove-function-library-finish-ajaxprocessor.jsp',
+                            headers: {
+                                Accept: "text/html"
+                            },
+                            data: 'functionLibraryName=' + functionLibName,
+                            async: false,
+                            success: function (responseText, status) {
+                                if (status == "success") {
+                                    location.assign("function-mgt-list.jsp");
+                                }
+                            }
+                        });
+                    }
+
+                    CARBON.showConfirmationDialog('Are you sure you want to delete "' + functionLibraryName + '" Function Library?',
+                        doDelete, null);
+                }
+            </script>
 
             <%
                 FunctionLibrary[] functionLibraries = null;
@@ -121,8 +151,8 @@
                                         <fmt:message key='export'/>
                                     </a>
                                     <a title="<fmt:message key='delete.functionlib.info'/>"
-                                       onclick=""
-                                       href="#"
+                                       onclick="removeItem('<%=Encode.forJavaScriptAttribute(functionLib.getFunctionLibraryName())%>');return false;"
+                                       href=""
                                        class="icon-link"
                                        style="background-image: url(images/delete.gif)">
                                         <fmt:message key='delete'/>

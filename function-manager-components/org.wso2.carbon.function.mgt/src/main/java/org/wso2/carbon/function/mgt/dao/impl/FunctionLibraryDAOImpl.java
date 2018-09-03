@@ -173,7 +173,8 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
             deleteFunctionLibStmt=connection.prepareStatement(FunctionLibMgtDBQueries.REMOVE_FUNCTIONLIB);
             deleteFunctionLibStmt.setInt(1, tenantID);
             deleteFunctionLibStmt.setString(2,functionLibraryName);
-            deleteFunctionLibStmt.execute();
+            deleteFunctionLibStmt.executeUpdate();
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }

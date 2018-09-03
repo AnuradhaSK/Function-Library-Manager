@@ -6,9 +6,6 @@ import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 import org.wso2.carbon.core.AbstractAdmin;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FunctionLibraryManagementAdminService extends AbstractAdmin {
 
     private static Log log = LogFactory.getLog(FunctionLibraryManagementAdminService.class);
@@ -31,6 +28,11 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
         functionLibMgtService =FunctionLibraryManagementService.getInstance();
         FunctionLibrary functionLibrary = functionLibMgtService.loadFunctionLibrary(functionLibraryName,getTenantDomain());
         return functionLibrary;
+    }
+
+    public void deleteFunctionLibrary(String functionLibraryName){
+        functionLibMgtService = FunctionLibraryManagementService.getInstance();
+        functionLibMgtService.deleteFunctionLibrary(functionLibraryName,getTenantDomain());
     }
 
 

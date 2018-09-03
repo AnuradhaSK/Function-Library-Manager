@@ -55,4 +55,21 @@ public class FunctionLibraryManagementServiceClient {
         return new FunctionLibrary[0];
     }
 
+    public FunctionLibrary loadFunctionLibrary(String functionLibraryName){
+        try {
+            return stub.loadFunctionLibrary(functionLibraryName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public void deleteFunctionLibrary(String functionLibraryName){
+        try {
+            stub.deleteFunctionLibrary(functionLibraryName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
 }
