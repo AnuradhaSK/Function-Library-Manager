@@ -35,5 +35,9 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
         functionLibMgtService.deleteFunctionLibrary(functionLibraryName,getTenantDomain());
     }
 
+    public void updateFunctionLibrary(FunctionLibrary functionLibrary, String oldFunctionLibraryName){
+        functionLibMgtService = FunctionLibraryManagementService.getInstance();
+        functionLibMgtService.updateFunctionLibrary(functionLibrary,getTenantDomain(),oldFunctionLibraryName);
+    }
 
 }

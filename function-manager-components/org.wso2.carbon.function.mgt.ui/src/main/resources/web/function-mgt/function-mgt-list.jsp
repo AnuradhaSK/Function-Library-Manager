@@ -138,7 +138,7 @@
                                 <td>
                                     <a title="<fmt:message key='edit.functionlib.info'/>"
                                        onclick=""
-                                       href="function-mgt-edit.jsp?functionLibraryName=<%=Encode.forUriComponent(functionLib.getFunctionLibraryName())%>"
+                                       href="load-function-library.jsp?functionLibraryName=<%=Encode.forUriComponent(functionLib.getFunctionLibraryName())%>"
                                        class="icon-link"
                                        style="background-image: url(images/edit.gif)">
                                         <fmt:message key='edit'/>

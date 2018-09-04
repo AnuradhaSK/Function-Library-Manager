@@ -72,4 +72,12 @@ public class FunctionLibraryManagementServiceClient {
             e.printStackTrace();
         }
     }
+
+    public void updateFunctionLibrary(FunctionLibrary functionLibrary, String oldFunctionLibraryName){
+        try {
+            stub.updateFunctionLibrary(functionLibrary,oldFunctionLibraryName);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
 }

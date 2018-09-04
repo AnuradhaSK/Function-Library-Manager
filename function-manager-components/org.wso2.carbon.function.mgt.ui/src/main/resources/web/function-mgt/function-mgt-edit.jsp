@@ -44,9 +44,24 @@
 <%@ page import="org.wso2.carbon.CarbonConstants" %>
 <%@ page import="org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary" %>
 <%@ page import="org.wso2.carbon.function.mgt.ui.client.FunctionLibraryManagementServiceClient" %>
+<%@ page import="org.owasp.encoder.Encode" %>
 
 
-
+<script type="text/javascript">
+    function UpdateFunctionLibOnclick() {
+        var functionLibName = document.getElementById("functionLibraryName").value;
+        console.log(functionLibName);
+        if( functionLibName == '') {
+            CARBON.showWarningDialog('Please provide function library Name');
+            location.href = '#';
+            /*} else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
+                 return false;*/
+        }else {
+            $("#update-functionlib-form").submit();
+            return true;
+        }
+    }
+</script>
 <fmt:bundle
         basename="org.wso2.carbon.function.mgt.ui.i18n.Resources">
     <carbon:breadcrumb label="functionlib.mgt"
@@ -59,17 +74,16 @@
         String functionLibraryName = request.getParameter("functionLibraryName");
         String BUNDLE = "org.wso2.carbon.function.mgt.ui.i18n.Resources";
         ResourceBundle resourceBundle = ResourceBundle.getBundle(BUNDLE, request.getLocale());
-
+        FunctionLibrary functionLibrary =null;
         if (functionLibraryName != null && !"".equals(functionLibraryName)) {
 
             try {
-
                 String cookie = (String) session.getAttribute(ServerConstants.ADMIN_SERVICE_COOKIE);
                 String backendServerURL = CarbonUIUtil.getServerURL(config.getServletContext(), session);
                 ConfigurationContext configContext = (ConfigurationContext) config.getServletContext().getAttribute(CarbonConstants.CONFIGURATION_CONTEXT);
 
                 FunctionLibraryManagementServiceClient serviceClient = new FunctionLibraryManagementServiceClient(cookie, backendServerURL, configContext);
-                FunctionLibrary functionLibrary = serviceClient.loadFunctionLibrary(functionLibraryName);
+                functionLibrary = serviceClient.loadFunctionLibrary(functionLibraryName);
 
 
             } catch (Exception e) {
@@ -77,20 +91,24 @@
                 CarbonUIMessage.sendCarbonUIMessage(message, CarbonUIMessage.ERROR, request, e);
             }
         }
+
     %>
     <div id="workArea">
         <div id="middle">
             <h2>Edit Function Library</h2>
 
-            <form id="add-function-form" name="add-function-library-form" method="post"
-                  action="">
+            <form id="update-functionlib-form" name="update-functionlib-form" method="post"
+                  action="edit-functionlib-finish-ajaxprocessor.jsp">
+
+                <input type="hidden" name="oldFunctionLibraryName" id="oldFunctionLibraryName" value="<%=Encode.forHtmlAttribute(functionLibraryName)%>"/>
+
                 <div class="sectionSeperator togglebleTitle"><fmt:message key='title.config.function.basic.config'/></div>
                 <div class="sectionSub">
                     <table class="carbonFormTable">
                         <tr>
                             <td style="width:15%" class="leftCol-med labelField"><fmt:message key='config.function.info.basic.name'/>:<span class="required">*</span></td>
                             <td>
-                                <input id="functionName" name="functionName" type="text" value="" white-list-patterns="^[a-zA-Z0-9\s._-]*$" autofocus/>
+                                <input id="functionLibraryName" name="functionLibraryName" type="text" value="<%=Encode.forHtmlAttribute(functionLibraryName)%>" white-list-patterns="^[a-zA-Z0-9\s._-]*$" autofocus/>
                                 <div class="sectionHelp">
                                     <fmt:message key='help.name'/>
                                 </div>
@@ -99,7 +117,9 @@
                         <tr>
                             <td class="leftCol-med labelField">Description:</td>
                             <td>
-                                <textarea style="width:50%" type="text" name="function-description" id="function-description" class="text-box-big"></textarea>
+                                <textarea style="width:50%" type="text" name="function-description" id="function-description" class="text-box-big">
+                                    <%=functionLibrary.getDescription() != null ? Encode.forHtmlAttribute(functionLibrary.getDescription()) : "" %>
+                                </textarea>
                                 <div class="sectionHelp">
                                     <fmt:message key='help.desc'/>
                                 </div>
@@ -117,7 +137,7 @@
             <textarea id="scriptTextArea" name="scriptTextArea"
                       placeholder="Write JavaScript Function..."
                       style="height: 500px;width: 100%; display: block;">
-
+            <%=functionLibrary.getFunctionLibraryScript() != null ? Encode.forHtmlAttribute(functionLibrary.getFunctionLibraryScript()) : "" %>
             </textarea>
 
                         </div>
@@ -126,9 +146,9 @@
                 </div>
                 <div style="clear:both"></div>
                 <div class="buttonRow" style=" margin-top: 10px;">
-                    <input id="createApp" type="button" value="<fmt:message key='button.update.function.manager'/>"/>
-                    <input type="button" value="<fmt:message key='button.cancel'/>"
-                           onclick=""/>
+                    <input id="update" type="button" value="<fmt:message key='button.update.function.manager'/>"
+                        onclick="UpdateFunctionLibOnclick()"/>
+                    <input type="button" onclick="javascript:location.href='function-mgt-list.jsp'" value="<fmt:message key='button.cancel'/>" />
                 </div>
             </form>
         </div>

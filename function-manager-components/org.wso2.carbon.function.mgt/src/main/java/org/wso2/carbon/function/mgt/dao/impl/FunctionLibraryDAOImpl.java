@@ -148,6 +148,7 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
             updateFunctionLibStmt.setInt(4,tenantID);
             updateFunctionLibStmt.setString(5,oldFunctionLibName);
             updateFunctionLibStmt.executeUpdate();
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IOException e) {

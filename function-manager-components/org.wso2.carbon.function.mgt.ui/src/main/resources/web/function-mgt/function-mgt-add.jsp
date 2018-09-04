@@ -46,7 +46,7 @@
         if( functionLibName == '') {
             CARBON.showWarningDialog('Please provide function library Name');
             location.href = '#';
-       /* } else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
+       /*} else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
             return false;*/
         }else {
             $("#add-functionlib-form").submit();
