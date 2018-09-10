@@ -3,6 +3,7 @@ package org.wso2.carbon.function.mgt;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.wso2.carbon.function.mgt.exception.FunctionLibraryManagementException;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 import org.wso2.carbon.core.AbstractAdmin;
 
@@ -12,32 +13,60 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
     private FunctionLibraryManagementService functionLibMgtService;
 
 
-    public void createFunctionLibrary(FunctionLibrary functionLibrary) {
-        functionLibMgtService = FunctionLibraryManagementService.getInstance();
-        functionLibMgtService.createFunctionLibrary(functionLibrary, getTenantDomain());
+    public void createFunctionLibrary(FunctionLibrary functionLibrary) throws FunctionLibraryManagementException{
+        try {
+            functionLibMgtService = FunctionLibraryManagementService.getInstance();
+            functionLibMgtService.createFunctionLibrary(functionLibrary, getTenantDomain());
+        }catch (FunctionLibraryManagementException flException){
+            log.error("Error while creating function library "+functionLibrary.getFunctionLibraryName()+" for tenant domain "+getTenantDomain(),flException);
+            throw flException;
+        }
 
     }
 
-    public FunctionLibrary[] getAllFunctionLibraries(){
-        functionLibMgtService = FunctionLibraryManagementService.getInstance();
-        FunctionLibrary[] functionLibraries = functionLibMgtService.getAllFunctionLibraries(getTenantDomain());
-        return functionLibraries;
+    public FunctionLibrary[] getAllFunctionLibraries() throws FunctionLibraryManagementException{
+        try {
+            functionLibMgtService = FunctionLibraryManagementService.getInstance();
+            FunctionLibrary[] functionLibraries = functionLibMgtService.getAllFunctionLibraries(getTenantDomain());
+            return functionLibraries;
+        }catch(FunctionLibraryManagementException flException){
+            log.error("Error while retrieving function libraris for tenant: " + getTenantDomain(),flException);
+            throw flException;
+        }
     }
 
-    public FunctionLibrary loadFunctionLibrary(String functionLibraryName){
-        functionLibMgtService =FunctionLibraryManagementService.getInstance();
-        FunctionLibrary functionLibrary = functionLibMgtService.loadFunctionLibrary(functionLibraryName,getTenantDomain());
-        return functionLibrary;
+    public FunctionLibrary loadFunctionLibrary(String functionLibraryName) throws FunctionLibraryManagementException {
+        try {
+            functionLibMgtService =FunctionLibraryManagementService.getInstance();
+            FunctionLibrary functionLibrary = null;
+            functionLibrary = functionLibMgtService.loadFunctionLibrary(functionLibraryName,getTenantDomain());
+            return functionLibrary;
+        } catch (FunctionLibraryManagementException flException) {
+            log.error("Error while retrieving function library "+ functionLibraryName+ " for tenant domain "+ getTenantDomain(),flException);
+            throw flException;
+        }
+
     }
 
-    public void deleteFunctionLibrary(String functionLibraryName){
+    public void deleteFunctionLibrary(String functionLibraryName) throws FunctionLibraryManagementException{
+        try {
         functionLibMgtService = FunctionLibraryManagementService.getInstance();
         functionLibMgtService.deleteFunctionLibrary(functionLibraryName,getTenantDomain());
+        } catch (FunctionLibraryManagementException flException) {
+            log.error("Error while deleting function library "+ functionLibraryName+ " for tenant domain "+getTenantDomain(),flException);
+            throw flException;
+        }
     }
 
-    public void updateFunctionLibrary(FunctionLibrary functionLibrary, String oldFunctionLibraryName){
-        functionLibMgtService = FunctionLibraryManagementService.getInstance();
-        functionLibMgtService.updateFunctionLibrary(functionLibrary,getTenantDomain(),oldFunctionLibraryName);
+    public void updateFunctionLibrary(FunctionLibrary functionLibrary, String oldFunctionLibraryName) throws FunctionLibraryManagementException{
+
+        try {
+            functionLibMgtService = FunctionLibraryManagementService.getInstance();
+            functionLibMgtService.updateFunctionLibrary(functionLibrary,getTenantDomain(),oldFunctionLibraryName);
+        } catch (FunctionLibraryManagementException flException) {
+            log.error("Error while updating function library "+oldFunctionLibraryName+ "for tenant domain "+ getTenantDomain(),flException);
+            throw flException;
+        }
     }
 
 }

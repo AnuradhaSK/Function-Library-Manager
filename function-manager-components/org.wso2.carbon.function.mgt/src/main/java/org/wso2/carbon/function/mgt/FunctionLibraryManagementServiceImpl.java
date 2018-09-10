@@ -4,6 +4,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.function.mgt.dao.FunctionLibraryDAO;
 import org.wso2.carbon.function.mgt.dao.impl.FunctionLibraryDAOImpl;
+import org.wso2.carbon.function.mgt.exception.FunctionLibraryManagementException;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 
 import java.util.List;
@@ -28,12 +29,12 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
         return functionLibMgtService;
     }
 
-    public void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain) {
+    public void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain) throws FunctionLibraryManagementException {
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
         functionLibraryDAO.createFunctionLibrary(functionLibrary, tenantDomain);
     }
 
-    public FunctionLibrary[] getAllFunctionLibraries(String tenantDomain) {
+    public FunctionLibrary[] getAllFunctionLibraries(String tenantDomain) throws FunctionLibraryManagementException {
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
         return functionLibraryDAO.getAllFunctionLibraries(tenantDomain);
 
@@ -44,12 +45,12 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
         return functionLibraryDAO.loadFunctionLibrary(functionLibraryName,tenantDomain);
     }
 
-    public void deleteFunctionLibrary(String functionLibraryName, String tenantDomain){
+    public void deleteFunctionLibrary(String functionLibraryName, String tenantDomain) throws FunctionLibraryManagementException {
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
         functionLibraryDAO.deleteFunctionLibrary(functionLibraryName,tenantDomain);
     }
 
-    public void updateFunctionLibrary(FunctionLibrary functionLibrary,String tenatDomain, String oldFunctionLibraryName){
+    public void updateFunctionLibrary(FunctionLibrary functionLibrary,String tenatDomain, String oldFunctionLibraryName) throws FunctionLibraryManagementException {
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
         functionLibraryDAO.updateFunctionLibrary(functionLibrary,tenatDomain,oldFunctionLibraryName);
     }

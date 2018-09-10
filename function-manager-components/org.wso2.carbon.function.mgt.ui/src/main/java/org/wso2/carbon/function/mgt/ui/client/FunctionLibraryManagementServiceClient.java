@@ -16,7 +16,7 @@ import java.rmi.RemoteException;
 public class FunctionLibraryManagementServiceClient {
     FunctionLibraryManagementAdminServiceStub stub;
     Log log = LogFactory.getLog(FunctionLibraryManagementServiceClient.class);
-    boolean debugEnabled = log.isErrorEnabled();
+    boolean debugEnabled = log.isDebugEnabled();
 
     public FunctionLibraryManagementServiceClient(String cookie, String backendServerURL, ConfigurationContext configCtx) throws AxisFault {
 
@@ -35,19 +35,22 @@ public class FunctionLibraryManagementServiceClient {
     }
 
     public void createFunctionLibrary(FunctionLibrary functionLibrary){
-        if(debugEnabled){
-            log.debug("Registering function library" + functionLibrary.getFunctionLibraryName());
-            try {
+        try {
+            if(debugEnabled) {
+                log.debug("Registering function library" + functionLibrary.getFunctionLibraryName());
+            }
                 stub.createFunctionLibrary(functionLibrary);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
-        }
 
     }
 
     public FunctionLibrary[] getAllFunctionLibraries(){
         try {
+            if(debugEnabled){
+                log.debug("Loading function libraries from DB");
+            }
             return stub.getAllFunctionLibraries();
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -57,6 +60,9 @@ public class FunctionLibraryManagementServiceClient {
 
     public FunctionLibrary loadFunctionLibrary(String functionLibraryName){
         try {
+            if(debugEnabled){
+                log.debug("Loading function library "+ functionLibraryName);
+            }
             return stub.loadFunctionLibrary(functionLibraryName);
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -67,6 +73,9 @@ public class FunctionLibraryManagementServiceClient {
 
     public void deleteFunctionLibrary(String functionLibraryName){
         try {
+            if(debugEnabled){
+                log.debug("Removing function library "+ functionLibraryName);
+            }
             stub.deleteFunctionLibrary(functionLibraryName);
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -75,6 +84,9 @@ public class FunctionLibraryManagementServiceClient {
 
     public void updateFunctionLibrary(FunctionLibrary functionLibrary, String oldFunctionLibraryName){
         try {
+            if(debugEnabled){
+                log.debug("Updating function library "+ oldFunctionLibraryName);
+            }
             stub.updateFunctionLibrary(functionLibrary,oldFunctionLibraryName);
         } catch (RemoteException e) {
             e.printStackTrace();

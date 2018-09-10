@@ -9,7 +9,7 @@ public class FunctionLibraryMgtUtil {
 
 
     /**
-     * Validate application name according to the regex
+     * Validate function library name according to the regex
      *
      * @return validated or not
      */
