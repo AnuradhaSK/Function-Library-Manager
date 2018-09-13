@@ -45,35 +45,19 @@
 
         
            /**
-            * auto generated Axis2 call back method for loadFunctionLibrary method
-            * override this method for handling normal response from loadFunctionLibrary operation
+            * auto generated Axis2 call back method for listFunctionLibraries method
+            * override this method for handling normal response from listFunctionLibraries operation
             */
-           public void receiveResultloadFunctionLibrary(
-                    org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from loadFunctionLibrary operation
-           */
-            public void receiveErrorloadFunctionLibrary(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for getAllFunctionLibraries method
-            * override this method for handling normal response from getAllFunctionLibraries operation
-            */
-           public void receiveResultgetAllFunctionLibraries(
+           public void receiveResultlistFunctionLibraries(
                     org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary[] result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from getAllFunctionLibraries operation
+           * override this method for handling error response from listFunctionLibraries operation
            */
-            public void receiveErrorgetAllFunctionLibraries(java.lang.Exception e) {
+            public void receiveErrorlistFunctionLibraries(java.lang.Exception e) {
             }
                 
            /**
@@ -119,6 +103,22 @@
            * override this method for handling error response from updateFunctionLibrary operation
            */
             public void receiveErrorupdateFunctionLibrary(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getFunctionLibrary method
+            * override this method for handling normal response from getFunctionLibrary operation
+            */
+           public void receiveResultgetFunctionLibrary(
+                    org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getFunctionLibrary operation
+           */
+            public void receiveErrorgetFunctionLibrary(java.lang.Exception e) {
             }
                 
 

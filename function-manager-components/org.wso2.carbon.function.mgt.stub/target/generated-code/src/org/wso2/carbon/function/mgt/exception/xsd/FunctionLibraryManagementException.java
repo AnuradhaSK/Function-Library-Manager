@@ -1,87 +1,44 @@
 
 /**
- * UpdateFunctionLibrary.java
+ * FunctionLibraryManagementException.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.1-wso2v10  Built on : Apr 16, 2014 (01:16:09 UTC)
  */
 
             
-                package org.wso2.carbon.function.mgt;
+                package org.wso2.carbon.function.mgt.exception.xsd;
             
 
             /**
-            *  UpdateFunctionLibrary bean class
+            *  FunctionLibraryManagementException bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class UpdateFunctionLibrary
+        public  class FunctionLibraryManagementException
         implements org.apache.axis2.databinding.ADBBean{
-        
-                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://org.apache.axis2/xsd",
-                "updateFunctionLibrary",
-                "ns3");
-
+        /* This type was generated from the piece of schema that had
+                name = FunctionLibraryManagementException
+                Namespace URI = http://exception.mgt.function.carbon.wso2.org/xsd
+                Namespace Prefix = ns1
+                */
             
 
                         /**
-                        * field for FunctionLibrary
+                        * field for Message
                         */
 
                         
-                                    protected org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary localFunctionLibrary ;
+                                    protected java.lang.String localMessage ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localFunctionLibraryTracker = false ;
+                           protected boolean localMessageTracker = false ;
 
-                           public boolean isFunctionLibrarySpecified(){
-                               return localFunctionLibraryTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary
-                           */
-                           public  org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary getFunctionLibrary(){
-                               return localFunctionLibrary;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param FunctionLibrary
-                               */
-                               public void setFunctionLibrary(org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary param){
-                            localFunctionLibraryTracker = true;
-                                   
-                                            this.localFunctionLibrary=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for OldFunctionLibraryName
-                        */
-
-                        
-                                    protected java.lang.String localOldFunctionLibraryName ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localOldFunctionLibraryNameTracker = false ;
-
-                           public boolean isOldFunctionLibraryNameSpecified(){
-                               return localOldFunctionLibraryNameTracker;
+                           public boolean isMessageSpecified(){
+                               return localMessageTracker;
                            }
 
                            
@@ -90,20 +47,20 @@
                            * Auto generated getter method
                            * @return java.lang.String
                            */
-                           public  java.lang.String getOldFunctionLibraryName(){
-                               return localOldFunctionLibraryName;
+                           public  java.lang.String getMessage(){
+                               return localMessage;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param OldFunctionLibraryName
+                               * @param param Message
                                */
-                               public void setOldFunctionLibraryName(java.lang.String param){
-                            localOldFunctionLibraryNameTracker = true;
+                               public void setMessage(java.lang.String param){
+                            localMessageTracker = true;
                                    
-                                            this.localOldFunctionLibraryName=param;
+                                            this.localMessage=param;
                                     
 
                                }
@@ -124,8 +81,8 @@
 
         
                org.apache.axiom.om.OMDataSource dataSource =
-                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME);
-               return factory.createOMElement(dataSource,MY_QNAME);
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName);
+               return factory.createOMElement(dataSource,parentQName);
             
         }
 
@@ -154,37 +111,25 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://org.apache.axis2/xsd");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://exception.mgt.function.carbon.wso2.org/xsd");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":updateFunctionLibrary",
+                           namespacePrefix+":FunctionLibraryManagementException",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "updateFunctionLibrary",
+                           "FunctionLibraryManagementException",
                            xmlWriter);
                    }
 
                
                    }
-                if (localFunctionLibraryTracker){
-                                    if (localFunctionLibrary==null){
-
-                                        writeStartElement(null, "http://org.apache.axis2/xsd", "functionLibrary", xmlWriter);
-
-                                       // write the nil attribute
-                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                      xmlWriter.writeEndElement();
-                                    }else{
-                                     localFunctionLibrary.serialize(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","functionLibrary"),
-                                        xmlWriter);
-                                    }
-                                } if (localOldFunctionLibraryNameTracker){
-                                    namespace = "http://org.apache.axis2/xsd";
-                                    writeStartElement(null, namespace, "oldFunctionLibraryName", xmlWriter);
+                if (localMessageTracker){
+                                    namespace = "http://exception.mgt.function.carbon.wso2.org/xsd";
+                                    writeStartElement(null, namespace, "message", xmlWriter);
                              
 
-                                          if (localOldFunctionLibraryName==null){
+                                          if (localMessage==null){
                                               // write the nil attribute
                                               
                                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
@@ -192,7 +137,7 @@
                                           }else{
 
                                         
-                                                   xmlWriter.writeCharacters(localOldFunctionLibraryName);
+                                                   xmlWriter.writeCharacters(localMessage);
                                             
                                           }
                                     
@@ -204,8 +149,8 @@
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://org.apache.axis2/xsd")){
-                return "ns3";
+            if(namespace.equals("http://exception.mgt.function.carbon.wso2.org/xsd")){
+                return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
@@ -377,19 +322,12 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localFunctionLibraryTracker){
-                            elementList.add(new javax.xml.namespace.QName("http://org.apache.axis2/xsd",
-                                                                      "functionLibrary"));
-                            
-                            
-                                    elementList.add(localFunctionLibrary==null?null:
-                                    localFunctionLibrary);
-                                } if (localOldFunctionLibraryNameTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://org.apache.axis2/xsd",
-                                                                      "oldFunctionLibraryName"));
+                 if (localMessageTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://exception.mgt.function.carbon.wso2.org/xsd",
+                                                                      "message"));
                                  
-                                         elementList.add(localOldFunctionLibraryName==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOldFunctionLibraryName));
+                                         elementList.add(localMessage==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localMessage));
                                     }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -415,9 +353,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static UpdateFunctionLibrary parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            UpdateFunctionLibrary object =
-                new UpdateFunctionLibrary();
+        public static FunctionLibraryManagementException parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            FunctionLibraryManagementException object =
+                new FunctionLibraryManagementException();
 
             int event;
             java.lang.String nillableValue = null;
@@ -441,10 +379,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"updateFunctionLibrary".equals(type)){
+                            if (!"FunctionLibraryManagementException".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (UpdateFunctionLibrary)org.wso2.carbon.function.mgt.ExtensionMapper.getTypeObject(
+                                return (FunctionLibraryManagementException)org.wso2.carbon.function.mgt.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -469,31 +407,7 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://org.apache.axis2/xsd","functionLibrary").equals(reader.getName())){
-                                
-                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                          object.setFunctionLibrary(null);
-                                          reader.next();
-                                            
-                                            reader.next();
-                                          
-                                      }else{
-                                    
-                                                object.setFunctionLibrary(org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary.Factory.parse(reader));
-                                              
-                                        reader.next();
-                                    }
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://org.apache.axis2/xsd","oldFunctionLibraryName").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://exception.mgt.function.carbon.wso2.org/xsd","message").equals(reader.getName())){
                                 
                                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                        if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
@@ -501,7 +415,7 @@
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setOldFunctionLibraryName(
+                                              object.setMessage(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {

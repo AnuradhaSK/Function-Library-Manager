@@ -21,7 +21,7 @@
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://org.apache.axis2/xsd",
                 "deleteFunctionLibrary",
-                "ns2");
+                "ns3");
 
             
 
@@ -151,7 +151,7 @@
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
             if(namespace.equals("http://org.apache.axis2/xsd")){
-                return "ns2";
+                return "ns3";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }

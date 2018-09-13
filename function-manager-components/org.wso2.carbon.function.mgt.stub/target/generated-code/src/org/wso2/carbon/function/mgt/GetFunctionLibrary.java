@@ -1,6 +1,6 @@
 
 /**
- * UpdateFunctionLibrary.java
+ * GetFunctionLibrary.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.1-wso2v10  Built on : Apr 16, 2014 (01:16:09 UTC)
@@ -11,77 +11,35 @@
             
 
             /**
-            *  UpdateFunctionLibrary bean class
+            *  GetFunctionLibrary bean class
             */
             @SuppressWarnings({"unchecked","unused"})
         
-        public  class UpdateFunctionLibrary
+        public  class GetFunctionLibrary
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
                 "http://org.apache.axis2/xsd",
-                "updateFunctionLibrary",
+                "getFunctionLibrary",
                 "ns3");
 
             
 
                         /**
-                        * field for FunctionLibrary
+                        * field for FunctionLibraryName
                         */
 
                         
-                                    protected org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary localFunctionLibrary ;
+                                    protected java.lang.String localFunctionLibraryName ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localFunctionLibraryTracker = false ;
+                           protected boolean localFunctionLibraryNameTracker = false ;
 
-                           public boolean isFunctionLibrarySpecified(){
-                               return localFunctionLibraryTracker;
-                           }
-
-                           
-
-                           /**
-                           * Auto generated getter method
-                           * @return org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary
-                           */
-                           public  org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary getFunctionLibrary(){
-                               return localFunctionLibrary;
-                           }
-
-                           
-                        
-                            /**
-                               * Auto generated setter method
-                               * @param param FunctionLibrary
-                               */
-                               public void setFunctionLibrary(org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary param){
-                            localFunctionLibraryTracker = true;
-                                   
-                                            this.localFunctionLibrary=param;
-                                    
-
-                               }
-                            
-
-                        /**
-                        * field for OldFunctionLibraryName
-                        */
-
-                        
-                                    protected java.lang.String localOldFunctionLibraryName ;
-                                
-                           /*  This tracker boolean wil be used to detect whether the user called the set method
-                          *   for this attribute. It will be used to determine whether to include this field
-                           *   in the serialized XML
-                           */
-                           protected boolean localOldFunctionLibraryNameTracker = false ;
-
-                           public boolean isOldFunctionLibraryNameSpecified(){
-                               return localOldFunctionLibraryNameTracker;
+                           public boolean isFunctionLibraryNameSpecified(){
+                               return localFunctionLibraryNameTracker;
                            }
 
                            
@@ -90,20 +48,20 @@
                            * Auto generated getter method
                            * @return java.lang.String
                            */
-                           public  java.lang.String getOldFunctionLibraryName(){
-                               return localOldFunctionLibraryName;
+                           public  java.lang.String getFunctionLibraryName(){
+                               return localFunctionLibraryName;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param OldFunctionLibraryName
+                               * @param param FunctionLibraryName
                                */
-                               public void setOldFunctionLibraryName(java.lang.String param){
-                            localOldFunctionLibraryNameTracker = true;
+                               public void setFunctionLibraryName(java.lang.String param){
+                            localFunctionLibraryNameTracker = true;
                                    
-                                            this.localOldFunctionLibraryName=param;
+                                            this.localFunctionLibraryName=param;
                                     
 
                                }
@@ -157,34 +115,22 @@
                    java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://org.apache.axis2/xsd");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           namespacePrefix+":updateFunctionLibrary",
+                           namespacePrefix+":getFunctionLibrary",
                            xmlWriter);
                    } else {
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
-                           "updateFunctionLibrary",
+                           "getFunctionLibrary",
                            xmlWriter);
                    }
 
                
                    }
-                if (localFunctionLibraryTracker){
-                                    if (localFunctionLibrary==null){
-
-                                        writeStartElement(null, "http://org.apache.axis2/xsd", "functionLibrary", xmlWriter);
-
-                                       // write the nil attribute
-                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
-                                      xmlWriter.writeEndElement();
-                                    }else{
-                                     localFunctionLibrary.serialize(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","functionLibrary"),
-                                        xmlWriter);
-                                    }
-                                } if (localOldFunctionLibraryNameTracker){
+                if (localFunctionLibraryNameTracker){
                                     namespace = "http://org.apache.axis2/xsd";
-                                    writeStartElement(null, namespace, "oldFunctionLibraryName", xmlWriter);
+                                    writeStartElement(null, namespace, "functionLibraryName", xmlWriter);
                              
 
-                                          if (localOldFunctionLibraryName==null){
+                                          if (localFunctionLibraryName==null){
                                               // write the nil attribute
                                               
                                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
@@ -192,7 +138,7 @@
                                           }else{
 
                                         
-                                                   xmlWriter.writeCharacters(localOldFunctionLibraryName);
+                                                   xmlWriter.writeCharacters(localFunctionLibraryName);
                                             
                                           }
                                     
@@ -377,19 +323,12 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localFunctionLibraryTracker){
-                            elementList.add(new javax.xml.namespace.QName("http://org.apache.axis2/xsd",
-                                                                      "functionLibrary"));
-                            
-                            
-                                    elementList.add(localFunctionLibrary==null?null:
-                                    localFunctionLibrary);
-                                } if (localOldFunctionLibraryNameTracker){
+                 if (localFunctionLibraryNameTracker){
                                       elementList.add(new javax.xml.namespace.QName("http://org.apache.axis2/xsd",
-                                                                      "oldFunctionLibraryName"));
+                                                                      "functionLibraryName"));
                                  
-                                         elementList.add(localOldFunctionLibraryName==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOldFunctionLibraryName));
+                                         elementList.add(localFunctionLibraryName==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFunctionLibraryName));
                                     }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -415,9 +354,9 @@
         * Postcondition: If this object is an element, the reader is positioned at its end element
         *                If this object is a complex type, the reader is positioned at the end element of its outer element
         */
-        public static UpdateFunctionLibrary parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
-            UpdateFunctionLibrary object =
-                new UpdateFunctionLibrary();
+        public static GetFunctionLibrary parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            GetFunctionLibrary object =
+                new GetFunctionLibrary();
 
             int event;
             java.lang.String nillableValue = null;
@@ -441,10 +380,10 @@
 
                     java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
                     
-                            if (!"updateFunctionLibrary".equals(type)){
+                            if (!"getFunctionLibrary".equals(type)){
                                 //find namespace for the prefix
                                 java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                                return (UpdateFunctionLibrary)org.wso2.carbon.function.mgt.ExtensionMapper.getTypeObject(
+                                return (GetFunctionLibrary)org.wso2.carbon.function.mgt.ExtensionMapper.getTypeObject(
                                      nsUri,type,reader);
                               }
                         
@@ -469,31 +408,7 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://org.apache.axis2/xsd","functionLibrary").equals(reader.getName())){
-                                
-                                      nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
-                                      if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                          object.setFunctionLibrary(null);
-                                          reader.next();
-                                            
-                                            reader.next();
-                                          
-                                      }else{
-                                    
-                                                object.setFunctionLibrary(org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary.Factory.parse(reader));
-                                              
-                                        reader.next();
-                                    }
-                              }  // End of if for expected property start element
-                                
-                                    else {
-                                        
-                                    }
-                                
-                                    
-                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
-                                
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://org.apache.axis2/xsd","oldFunctionLibraryName").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://org.apache.axis2/xsd","functionLibraryName").equals(reader.getName())){
                                 
                                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                        if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
@@ -501,7 +416,7 @@
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setOldFunctionLibraryName(
+                                              object.setFunctionLibraryName(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {

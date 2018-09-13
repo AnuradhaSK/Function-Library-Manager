@@ -31,6 +31,16 @@
                   }
 
               
+                  if (
+                  "http://exception.mgt.function.carbon.wso2.org/xsd".equals(namespaceURI) &&
+                  "FunctionLibraryManagementException".equals(typeName)){
+                   
+                            return  org.wso2.carbon.function.mgt.exception.xsd.FunctionLibraryManagementException.Factory.parse(reader);
+                        
+
+                  }
+
+              
              throw new org.apache.axis2.databinding.ADBException("Unsupported type " + namespaceURI + " " + typeName);
           }
 

@@ -19,56 +19,27 @@
         /**
           * Auto generated method signature
           * 
-                    * @param loadFunctionLibrary6
+                    * @param listFunctionLibraries6
                 
+             * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
          */
 
          
-                     public org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary loadFunctionLibrary(
-
-                        java.lang.String functionLibraryName7)
-                        throws java.rmi.RemoteException
-             ;
-
-        
-         /**
-            * Auto generated method signature for Asynchronous Invocations
-            * 
-                * @param loadFunctionLibrary6
-            
-          */
-        public void startloadFunctionLibrary(
-
-            java.lang.String functionLibraryName7,
-
-            final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
-
-            throws java.rmi.RemoteException;
-
-     
-
-        /**
-          * Auto generated method signature
-          * 
-                    * @param getAllFunctionLibraries10
-                
-         */
-
-         
-                     public org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary[] getAllFunctionLibraries(
+                     public org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary[] listFunctionLibraries(
 
                         )
                         throws java.rmi.RemoteException
-             ;
+             
+          ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException;
 
         
          /**
             * Auto generated method signature for Asynchronous Invocations
             * 
-                * @param getAllFunctionLibraries10
+                * @param listFunctionLibraries6
             
           */
-        public void startgetAllFunctionLibraries(
+        public void startlistFunctionLibraries(
 
             
 
@@ -81,27 +52,29 @@
         /**
           * Auto generated method signature
           * 
-                    * @param createFunctionLibrary13
+                    * @param createFunctionLibrary9
                 
+             * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
          */
 
          
                      public void createFunctionLibrary(
 
-                        org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary14)
+                        org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary10)
                         throws java.rmi.RemoteException
-             ;
+             
+          ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException;
 
         
          /**
             * Auto generated method signature for Asynchronous Invocations
             * 
-                * @param createFunctionLibrary13
+                * @param createFunctionLibrary9
             
           */
         public void startcreateFunctionLibrary(
 
-            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary14,
+            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary10,
 
             final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 
@@ -112,27 +85,29 @@
         /**
           * Auto generated method signature
           * 
-                    * @param deleteFunctionLibrary16
+                    * @param deleteFunctionLibrary12
                 
+             * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
          */
 
          
                      public void deleteFunctionLibrary(
 
-                        java.lang.String functionLibraryName17)
+                        java.lang.String functionLibraryName13)
                         throws java.rmi.RemoteException
-             ;
+             
+          ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException;
 
         
          /**
             * Auto generated method signature for Asynchronous Invocations
             * 
-                * @param deleteFunctionLibrary16
+                * @param deleteFunctionLibrary12
             
           */
         public void startdeleteFunctionLibrary(
 
-            java.lang.String functionLibraryName17,
+            java.lang.String functionLibraryName13,
 
             final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 
@@ -143,27 +118,62 @@
         /**
           * Auto generated method signature
           * 
-                    * @param updateFunctionLibrary19
+                    * @param updateFunctionLibrary15
                 
+             * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
          */
 
          
                      public void updateFunctionLibrary(
 
-                        org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary20,java.lang.String oldFunctionLibraryName21)
+                        org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary16,java.lang.String oldFunctionLibraryName17)
                         throws java.rmi.RemoteException
-             ;
+             
+          ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException;
 
         
          /**
             * Auto generated method signature for Asynchronous Invocations
             * 
-                * @param updateFunctionLibrary19
+                * @param updateFunctionLibrary15
             
           */
         public void startupdateFunctionLibrary(
 
-            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary20,java.lang.String oldFunctionLibraryName21,
+            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary16,java.lang.String oldFunctionLibraryName17,
+
+            final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getFunctionLibrary19
+                
+             * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
+         */
+
+         
+                     public org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary getFunctionLibrary(
+
+                        java.lang.String functionLibraryName20)
+                        throws java.rmi.RemoteException
+             
+          ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getFunctionLibrary19
+            
+          */
+        public void startgetFunctionLibrary(
+
+            java.lang.String functionLibraryName20,
 
             final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 

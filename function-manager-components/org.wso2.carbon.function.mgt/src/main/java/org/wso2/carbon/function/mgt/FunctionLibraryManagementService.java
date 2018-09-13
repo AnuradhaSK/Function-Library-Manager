@@ -5,17 +5,22 @@ import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 
 public abstract class FunctionLibraryManagementService {
 
-    public static FunctionLibraryManagementService getInstance() {
+    public static FunctionLibraryManagementService getInstance () {
         return FunctionLibraryManagementServiceImpl.getInstance();
     }
 
-    public abstract void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain) throws FunctionLibraryManagementException;
+    public abstract void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain)
+            throws FunctionLibraryManagementException;
 
-    public abstract FunctionLibrary[] getAllFunctionLibraries(String tenantDomain) throws FunctionLibraryManagementException;
+    public abstract FunctionLibrary[] listFunctionLibraries (String tenantDomain)
+            throws FunctionLibraryManagementException;
 
-    public abstract  FunctionLibrary loadFunctionLibrary(String functionLibraryName, String tenantDomain) throws FunctionLibraryManagementException;
+    public abstract  FunctionLibrary getFunctionLibrary (String functionLibraryName, String tenantDomain)
+            throws FunctionLibraryManagementException;
 
-    public abstract void deleteFunctionLibrary(String functionLibraryName, String tenantDomain) throws FunctionLibraryManagementException;
+    public abstract void deleteFunctionLibrary (String functionLibraryName, String tenantDomain)
+            throws FunctionLibraryManagementException;
 
-    public abstract void updateFunctionLibrary(FunctionLibrary functionLibrary,String tenatDomain, String oldFunctionLibraryName) throws FunctionLibraryManagementException;
+    public abstract void updateFunctionLibrary (FunctionLibrary functionLibrary,String tenatDomain, String oldFunctionLibraryName)
+            throws FunctionLibraryManagementException;
 }

@@ -83,7 +83,7 @@
                 ConfigurationContext configContext = (ConfigurationContext) config.getServletContext().getAttribute(CarbonConstants.CONFIGURATION_CONTEXT);
 
                 FunctionLibraryManagementServiceClient serviceClient = new FunctionLibraryManagementServiceClient(cookie, backendServerURL, configContext);
-                functionLibrary = serviceClient.loadFunctionLibrary(functionLibraryName);
+                functionLibrary = serviceClient.getFunctionLibrary(functionLibraryName);
 
 
             } catch (Exception e) {

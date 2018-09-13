@@ -85,7 +85,7 @@
 
                     FunctionLibraryManagementServiceClient serviceClient = new
                             FunctionLibraryManagementServiceClient(cookie, backendServerURL, configContext);
-                    functionLibraries = serviceClient.getAllFunctionLibraries();
+                    functionLibraries = serviceClient.listFunctionLibraries();
 
                     if (functionLibraries != null) {
                         numberOfPages = (int) Math.ceil((double) functionLibraries.length / resultsPerPage);

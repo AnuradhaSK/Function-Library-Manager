@@ -13,7 +13,7 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
     private FunctionLibraryManagementService functionLibMgtService;
 
 
-    public void createFunctionLibrary(FunctionLibrary functionLibrary) throws FunctionLibraryManagementException{
+    public void createFunctionLibrary (FunctionLibrary functionLibrary) throws FunctionLibraryManagementException{
         try {
             functionLibMgtService = FunctionLibraryManagementService.getInstance();
             functionLibMgtService.createFunctionLibrary(functionLibrary, getTenantDomain());
@@ -24,10 +24,10 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
 
     }
 
-    public FunctionLibrary[] getAllFunctionLibraries() throws FunctionLibraryManagementException{
+    public FunctionLibrary[] listFunctionLibraries() throws FunctionLibraryManagementException{
         try {
             functionLibMgtService = FunctionLibraryManagementService.getInstance();
-            FunctionLibrary[] functionLibraries = functionLibMgtService.getAllFunctionLibraries(getTenantDomain());
+            FunctionLibrary[] functionLibraries = functionLibMgtService.listFunctionLibraries(getTenantDomain());
             return functionLibraries;
         }catch(FunctionLibraryManagementException flException){
             log.error("Error while retrieving function libraris for tenant: " + getTenantDomain(),flException);
@@ -35,11 +35,11 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
         }
     }
 
-    public FunctionLibrary loadFunctionLibrary(String functionLibraryName) throws FunctionLibraryManagementException {
+    public FunctionLibrary getFunctionLibrary(String functionLibraryName) throws FunctionLibraryManagementException {
         try {
             functionLibMgtService =FunctionLibraryManagementService.getInstance();
             FunctionLibrary functionLibrary = null;
-            functionLibrary = functionLibMgtService.loadFunctionLibrary(functionLibraryName,getTenantDomain());
+            functionLibrary = functionLibMgtService.getFunctionLibrary(functionLibraryName,getTenantDomain());
             return functionLibrary;
         } catch (FunctionLibraryManagementException flException) {
             log.error("Error while retrieving function library "+ functionLibraryName+ " for tenant domain "+ getTenantDomain(),flException);

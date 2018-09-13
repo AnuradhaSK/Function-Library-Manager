@@ -49,7 +49,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "loadFunctionLibrary"));
+            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "listFunctionLibraries"));
 	    _service.addOperation(__operation);
 	    
 
@@ -61,7 +61,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "getAllFunctionLibraries"));
+            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "createFunctionLibrary"));
 	    _service.addOperation(__operation);
 	    
 
@@ -73,7 +73,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "createFunctionLibrary"));
+            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "deleteFunctionLibrary"));
 	    _service.addOperation(__operation);
 	    
 
@@ -85,7 +85,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "deleteFunctionLibrary"));
+            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "updateFunctionLibrary"));
 	    _service.addOperation(__operation);
 	    
 
@@ -97,7 +97,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "updateFunctionLibrary"));
+            __operation.setName(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org", "getFunctionLibrary"));
 	    _service.addOperation(__operation);
 	    
 
@@ -111,6 +111,26 @@
     //populates the faults
     private void populateFaults(){
          
+              faultExceptionNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "listFunctionLibraries"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultExceptionClassNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "listFunctionLibraries"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultMessageMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "listFunctionLibraries"),"org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+           
+              faultExceptionNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "createFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultExceptionClassNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "createFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultMessageMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "createFunctionLibrary"),"org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+           
+              faultExceptionNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "deleteFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultExceptionClassNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "deleteFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultMessageMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "deleteFunctionLibrary"),"org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+           
+              faultExceptionNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "updateFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultExceptionClassNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "updateFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultMessageMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "updateFunctionLibrary"),"org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+           
+              faultExceptionNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "getFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultExceptionClassNameMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "getFunctionLibrary"),"org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+              faultMessageMap.put(new org.apache.axis2.client.FaultMapKey(new javax.xml.namespace.QName("http://org.apache.axis2/xsd","FunctionLibraryManagementAdminServiceFunctionLibraryManagementException"), "getFunctionLibrary"),"org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException");
+           
 
 
     }
@@ -180,25 +200,27 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#loadFunctionLibrary
-                     * @param loadFunctionLibrary23
+                     * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#listFunctionLibraries
+                     * @param listFunctionLibraries23
                     
+                     * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
                      */
 
                     
 
-                            public  org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary loadFunctionLibrary(
+                            public  org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary[] listFunctionLibraries(
 
-                            java.lang.String functionLibraryName24)
+                            )
                         
 
                     throws java.rmi.RemoteException
                     
-                    {
+                    
+                        ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException{
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
                org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
-              _operationClient.getOptions().setAction("urn:loadFunctionLibrary");
+              _operationClient.getOptions().setAction("urn:listFunctionLibraries");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
               
@@ -213,12 +235,11 @@
 
               // create SOAP envelope with that payload
               org.apache.axiom.soap.SOAPEnvelope env = null;
-                    org.wso2.carbon.function.mgt.LoadFunctionLibrary dummyWrappedType = null;
+                    org.wso2.carbon.function.mgt.ListFunctionLibraries dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibraryName24,
                                                     dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
-                                                    "loadFunctionLibrary")));
+                                                    "listFunctionLibraries")));
                                                 
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -239,29 +260,33 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse.class,
+                                             org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return getLoadFunctionLibraryResponse_return((org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse)object);
+                                        return getListFunctionLibrariesResponse_return((org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse)object);
                                    
          }catch(org.apache.axis2.AxisFault f){
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"loadFunctionLibrary"))){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listFunctionLibraries"))){
                     //make the fault by reflection
                     try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"loadFunctionLibrary"));
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listFunctionLibraries"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
                         java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"loadFunctionLibrary"));
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listFunctionLibraries"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
                                    new java.lang.Class[]{messageClass});
                         m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+                        if (ex instanceof org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException){
+                          throw (org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException)ex;
+                        }
                         
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
@@ -300,20 +325,20 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startloadFunctionLibrary
-                    * @param loadFunctionLibrary23
+                * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startlistFunctionLibraries
+                    * @param listFunctionLibraries23
                 
                 */
-                public  void startloadFunctionLibrary(
+                public  void startlistFunctionLibraries(
 
-                 java.lang.String functionLibraryName24,
+                 
 
                   final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
-             _operationClient.getOptions().setAction("urn:loadFunctionLibrary");
+             _operationClient.getOptions().setAction("urn:listFunctionLibraries");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
               
@@ -328,12 +353,11 @@
 
                     
                                     //Style is Doc.
-                                    org.wso2.carbon.function.mgt.LoadFunctionLibrary dummyWrappedType = null;
+                                    org.wso2.carbon.function.mgt.ListFunctionLibraries dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibraryName24,
                                                      dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
-                                                    "loadFunctionLibrary")));
+                                                    "listFunctionLibraries")));
                                                 
         // adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
@@ -351,13 +375,13 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse.class,
+                                                                         org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultloadFunctionLibrary(
-                                            getLoadFunctionLibraryResponse_return((org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse)object));
+                                        callback.receiveResultlistFunctionLibraries(
+                                            getListFunctionLibrariesResponse_return((org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse)object));
                                         
                             } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorloadFunctionLibrary(e);
+                                callback.receiveErrorlistFunctionLibraries(e);
                             }
                             }
 
@@ -366,52 +390,57 @@
 									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
 									org.apache.axiom.om.OMElement faultElt = f.getDetail();
 									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"loadFunctionLibrary"))){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listFunctionLibraries"))){
 											//make the fault by reflection
 											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"loadFunctionLibrary"));
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listFunctionLibraries"));
 													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
 													java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
 													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"loadFunctionLibrary"));
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"listFunctionLibraries"));
 														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
 													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
 													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
 															new java.lang.Class[]{messageClass});
 													m.invoke(ex,new java.lang.Object[]{messageObject});
 													
+													if (ex instanceof org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException){
+														callback.receiveErrorlistFunctionLibraries((org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException)ex);
+											            return;
+										            }
+										            
 					
-										            callback.receiveErrorloadFunctionLibrary(new java.rmi.RemoteException(ex.getMessage(), ex));
+										            callback.receiveErrorlistFunctionLibraries(new java.rmi.RemoteException(ex.getMessage(), ex));
                                             } catch(java.lang.ClassCastException e){
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorloadFunctionLibrary(f);
+                                                callback.receiveErrorlistFunctionLibraries(f);
                                             } catch (java.lang.ClassNotFoundException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorloadFunctionLibrary(f);
+                                                callback.receiveErrorlistFunctionLibraries(f);
                                             } catch (java.lang.NoSuchMethodException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorloadFunctionLibrary(f);
+                                                callback.receiveErrorlistFunctionLibraries(f);
                                             } catch (java.lang.reflect.InvocationTargetException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorloadFunctionLibrary(f);
+                                                callback.receiveErrorlistFunctionLibraries(f);
                                             } catch (java.lang.IllegalAccessException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorloadFunctionLibrary(f);
+                                                callback.receiveErrorlistFunctionLibraries(f);
                                             } catch (java.lang.InstantiationException e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorloadFunctionLibrary(f);
+                                                callback.receiveErrorlistFunctionLibraries(f);
                                             } catch (org.apache.axis2.AxisFault e) {
                                                 // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorloadFunctionLibrary(f);
+                                                callback.receiveErrorlistFunctionLibraries(f);
                                             }
 									    } else {
-										    callback.receiveErrorloadFunctionLibrary(f);
+										    callback.receiveErrorlistFunctionLibraries(f);
 									    }
 									} else {
-									    callback.receiveErrorloadFunctionLibrary(f);
+									    callback.receiveErrorlistFunctionLibraries(f);
 									}
 								} else {
-								    callback.receiveErrorloadFunctionLibrary(error);
+								    callback.receiveErrorlistFunctionLibraries(error);
 								}
                             }
 
@@ -424,7 +453,7 @@
                                 try {
                                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
                                 } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorloadFunctionLibrary(axisFault);
+                                    callback.receiveErrorlistFunctionLibraries(axisFault);
                                 }
                             }
                 });
@@ -445,287 +474,26 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#getAllFunctionLibraries
-                     * @param getAllFunctionLibraries27
-                    
-                     */
-
-                    
-
-                            public  org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary[] getAllFunctionLibraries(
-
-                            )
-                        
-
-                    throws java.rmi.RemoteException
-                    
-                    {
-              org.apache.axis2.context.MessageContext _messageContext = null;
-              try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[1].getName());
-              _operationClient.getOptions().setAction("urn:getAllFunctionLibraries");
-              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-              
-              
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-              
-
-              // create a message context
-              _messageContext = new org.apache.axis2.context.MessageContext();
-
-              
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env = null;
-                    org.wso2.carbon.function.mgt.GetAllFunctionLibraries dummyWrappedType = null;
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    dummyWrappedType,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
-                                                    "getAllFunctionLibraries")));
-                                                
-        //adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // set the message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message contxt to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-        //execute the operation client
-        _operationClient.execute(true);
-
-         
-               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
-                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
-                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
-                
-                
-                                java.lang.Object object = fromOM(
-                                             _returnEnv.getBody().getFirstElement() ,
-                                             org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse.class,
-                                              getEnvelopeNamespaces(_returnEnv));
-
-                               
-                                        return getGetAllFunctionLibrariesResponse_return((org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse)object);
-                                   
-         }catch(org.apache.axis2.AxisFault f){
-
-            org.apache.axiom.om.OMElement faultElt = f.getDetail();
-            if (faultElt!=null){
-                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getAllFunctionLibraries"))){
-                    //make the fault by reflection
-                    try{
-                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getAllFunctionLibraries"));
-                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
-                        //message class
-                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getAllFunctionLibraries"));
-                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                   new java.lang.Class[]{messageClass});
-                        m.invoke(ex,new java.lang.Object[]{messageObject});
-                        
-
-                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }catch(java.lang.ClassCastException e){
-                       // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }catch (java.lang.NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    } catch (java.lang.reflect.InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }  catch (java.lang.IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }   catch (java.lang.InstantiationException e) {
-                        // we cannot intantiate the class - throw the original Axis fault
-                        throw f;
-                    }
-                }else{
-                    throw f;
-                }
-            }else{
-                throw f;
-            }
-            } finally {
-                if (_messageContext.getTransportOut() != null) {
-                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-            }
-        }
-            
-                /**
-                * Auto generated method signature for Asynchronous Invocations
-                * 
-                * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startgetAllFunctionLibraries
-                    * @param getAllFunctionLibraries27
-                
-                */
-                public  void startgetAllFunctionLibraries(
-
-                 
-
-                  final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
-
-                throws java.rmi.RemoteException{
-
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[1].getName());
-             _operationClient.getOptions().setAction("urn:getAllFunctionLibraries");
-             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
-
-              
-              
-                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
-              
-
-
-              // create SOAP envelope with that payload
-              org.apache.axiom.soap.SOAPEnvelope env=null;
-              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
-
-                    
-                                    //Style is Doc.
-                                    org.wso2.carbon.function.mgt.GetAllFunctionLibraries dummyWrappedType = null;
-                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                     dummyWrappedType,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
-                                                    "getAllFunctionLibraries")));
-                                                
-        // adding SOAP soap_headers
-         _serviceClient.addHeadersToEnvelope(env);
-        // create message context with that soap envelope
-        _messageContext.setEnvelope(env);
-
-        // add the message context to the operation client
-        _operationClient.addMessageContext(_messageContext);
-
-
-                    
-                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
-                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
-                            try {
-                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
-                                
-                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse.class,
-                                                                         getEnvelopeNamespaces(resultEnv));
-                                        callback.receiveResultgetAllFunctionLibraries(
-                                            getGetAllFunctionLibrariesResponse_return((org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse)object));
-                                        
-                            } catch (org.apache.axis2.AxisFault e) {
-                                callback.receiveErrorgetAllFunctionLibraries(e);
-                            }
-                            }
-
-                            public void onError(java.lang.Exception error) {
-								if (error instanceof org.apache.axis2.AxisFault) {
-									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
-									org.apache.axiom.om.OMElement faultElt = f.getDetail();
-									if (faultElt!=null){
-										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getAllFunctionLibraries"))){
-											//make the fault by reflection
-											try{
-													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getAllFunctionLibraries"));
-													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-													java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
-													//message class
-													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getAllFunctionLibraries"));
-														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
-													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-															new java.lang.Class[]{messageClass});
-													m.invoke(ex,new java.lang.Object[]{messageObject});
-													
-					
-										            callback.receiveErrorgetAllFunctionLibraries(new java.rmi.RemoteException(ex.getMessage(), ex));
-                                            } catch(java.lang.ClassCastException e){
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorgetAllFunctionLibraries(f);
-                                            } catch (java.lang.ClassNotFoundException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorgetAllFunctionLibraries(f);
-                                            } catch (java.lang.NoSuchMethodException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorgetAllFunctionLibraries(f);
-                                            } catch (java.lang.reflect.InvocationTargetException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorgetAllFunctionLibraries(f);
-                                            } catch (java.lang.IllegalAccessException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorgetAllFunctionLibraries(f);
-                                            } catch (java.lang.InstantiationException e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorgetAllFunctionLibraries(f);
-                                            } catch (org.apache.axis2.AxisFault e) {
-                                                // we cannot intantiate the class - throw the original Axis fault
-                                                callback.receiveErrorgetAllFunctionLibraries(f);
-                                            }
-									    } else {
-										    callback.receiveErrorgetAllFunctionLibraries(f);
-									    }
-									} else {
-									    callback.receiveErrorgetAllFunctionLibraries(f);
-									}
-								} else {
-								    callback.receiveErrorgetAllFunctionLibraries(error);
-								}
-                            }
-
-                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
-                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
-                                onError(fault);
-                            }
-
-                            public void onComplete() {
-                                try {
-                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                                } catch (org.apache.axis2.AxisFault axisFault) {
-                                    callback.receiveErrorgetAllFunctionLibraries(axisFault);
-                                }
-                            }
-                });
-                        
-
-          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[1].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
-           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[1].setMessageReceiver(
-                    _callbackReceiver);
-        }
-
-           //execute the operation client
-           _operationClient.execute(false);
-
-                    }
-                
-                    /**
-                     * Auto generated method signature
-                     * 
                      * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#createFunctionLibrary
-                     * @param createFunctionLibrary30
+                     * @param createFunctionLibrary26
                     
+                     * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
                      */
 
                     
 
                             public  void createFunctionLibrary(
 
-                            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary31)
+                            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary27)
                         
 
                     throws java.rmi.RemoteException
                     
-                    {
+                    
+                        ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException{
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[2].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[1].getName());
               _operationClient.getOptions().setAction("urn:createFunctionLibrary");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -743,7 +511,7 @@
               org.apache.axiom.soap.SOAPEnvelope env = null;
                     org.wso2.carbon.function.mgt.CreateFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibrary31,
+                                                    functionLibrary27,
                                                     dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "createFunctionLibrary")));
@@ -779,6 +547,10 @@
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
                                    new java.lang.Class[]{messageClass});
                         m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+                        if (ex instanceof org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException){
+                          throw (org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException)ex;
+                        }
                         
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
@@ -818,18 +590,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startcreateFunctionLibrary
-                    * @param createFunctionLibrary30
+                    * @param createFunctionLibrary26
                 
                 */
                 public  void startcreateFunctionLibrary(
 
-                 org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary31,
+                 org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary27,
 
                   final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[2].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[1].getName());
              _operationClient.getOptions().setAction("urn:createFunctionLibrary");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -847,7 +619,7 @@
                                     //Style is Doc.
                                     org.wso2.carbon.function.mgt.CreateFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibrary31,
+                                                    functionLibrary27,
                                                      dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "createFunctionLibrary")));
@@ -866,9 +638,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[2].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[1].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[2].setMessageReceiver(
+          _operations[1].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -881,23 +653,25 @@
                      * Auto generated method signature
                      * 
                      * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#deleteFunctionLibrary
-                     * @param deleteFunctionLibrary33
+                     * @param deleteFunctionLibrary29
                     
+                     * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
                      */
 
                     
 
                             public  void deleteFunctionLibrary(
 
-                            java.lang.String functionLibraryName34)
+                            java.lang.String functionLibraryName30)
                         
 
                     throws java.rmi.RemoteException
                     
-                    {
+                    
+                        ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException{
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[3].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[2].getName());
               _operationClient.getOptions().setAction("urn:deleteFunctionLibrary");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -915,7 +689,7 @@
               org.apache.axiom.soap.SOAPEnvelope env = null;
                     org.wso2.carbon.function.mgt.DeleteFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibraryName34,
+                                                    functionLibraryName30,
                                                     dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "deleteFunctionLibrary")));
@@ -951,6 +725,10 @@
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
                                    new java.lang.Class[]{messageClass});
                         m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+                        if (ex instanceof org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException){
+                          throw (org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException)ex;
+                        }
                         
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
@@ -990,18 +768,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startdeleteFunctionLibrary
-                    * @param deleteFunctionLibrary33
+                    * @param deleteFunctionLibrary29
                 
                 */
                 public  void startdeleteFunctionLibrary(
 
-                 java.lang.String functionLibraryName34,
+                 java.lang.String functionLibraryName30,
 
                   final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[3].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[2].getName());
              _operationClient.getOptions().setAction("urn:deleteFunctionLibrary");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1019,7 +797,7 @@
                                     //Style is Doc.
                                     org.wso2.carbon.function.mgt.DeleteFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibraryName34,
+                                                    functionLibraryName30,
                                                      dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "deleteFunctionLibrary")));
@@ -1038,9 +816,9 @@
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if ( _operations[3].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+        if ( _operations[2].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-          _operations[3].setMessageReceiver(
+          _operations[2].setMessageReceiver(
                     _callbackReceiver);
         }
 
@@ -1053,23 +831,25 @@
                      * Auto generated method signature
                      * 
                      * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#updateFunctionLibrary
-                     * @param updateFunctionLibrary36
+                     * @param updateFunctionLibrary32
                     
+                     * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
                      */
 
                     
 
                             public  void updateFunctionLibrary(
 
-                            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary37,java.lang.String oldFunctionLibraryName38)
+                            org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary33,java.lang.String oldFunctionLibraryName34)
                         
 
                     throws java.rmi.RemoteException
                     
-                    {
+                    
+                        ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException{
               org.apache.axis2.context.MessageContext _messageContext = null;
               try{
-               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[3].getName());
               _operationClient.getOptions().setAction("urn:updateFunctionLibrary");
               _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1087,8 +867,8 @@
               org.apache.axiom.soap.SOAPEnvelope env = null;
                     org.wso2.carbon.function.mgt.UpdateFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibrary37,
-                                                    oldFunctionLibraryName38,
+                                                    functionLibrary33,
+                                                    oldFunctionLibraryName34,
                                                     dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "updateFunctionLibrary")));
@@ -1124,6 +904,10 @@
                         java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
                                    new java.lang.Class[]{messageClass});
                         m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+                        if (ex instanceof org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException){
+                          throw (org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException)ex;
+                        }
                         
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
@@ -1163,18 +947,18 @@
                 * Auto generated method signature for Asynchronous Invocations
                 * 
                 * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startupdateFunctionLibrary
-                    * @param updateFunctionLibrary36
+                    * @param updateFunctionLibrary32
                 
                 */
                 public  void startupdateFunctionLibrary(
 
-                 org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary37,java.lang.String oldFunctionLibraryName38,
+                 org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary functionLibrary33,java.lang.String oldFunctionLibraryName34,
 
                   final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
-              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[3].getName());
              _operationClient.getOptions().setAction("urn:updateFunctionLibrary");
              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
@@ -1192,8 +976,8 @@
                                     //Style is Doc.
                                     org.wso2.carbon.function.mgt.UpdateFunctionLibrary dummyWrappedType = null;
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
-                                                    functionLibrary37,
-                                                    oldFunctionLibraryName38,
+                                                    functionLibrary33,
+                                                    oldFunctionLibraryName34,
                                                      dummyWrappedType,
                                                     optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
                                                     "updateFunctionLibrary")));
@@ -1209,6 +993,282 @@
 
                     
                             // Nothing to pass as the callback!!!
+                        
+
+          org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if ( _operations[3].getMessageReceiver()==null &&  _operationClient.getOptions().isUseSeparateListener()) {
+           _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+          _operations[3].setMessageReceiver(
+                    _callbackReceiver);
+        }
+
+           //execute the operation client
+           _operationClient.execute(false);
+
+                    }
+                
+                    /**
+                     * Auto generated method signature
+                     * 
+                     * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#getFunctionLibrary
+                     * @param getFunctionLibrary36
+                    
+                     * @throws org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException : 
+                     */
+
+                    
+
+                            public  org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary getFunctionLibrary(
+
+                            java.lang.String functionLibraryName37)
+                        
+
+                    throws java.rmi.RemoteException
+                    
+                    
+                        ,org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException{
+              org.apache.axis2.context.MessageContext _messageContext = null;
+              try{
+               org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
+              _operationClient.getOptions().setAction("urn:getFunctionLibrary");
+              _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+
+              // create a message context
+              _messageContext = new org.apache.axis2.context.MessageContext();
+
+              
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env = null;
+                    org.wso2.carbon.function.mgt.GetFunctionLibrary dummyWrappedType = null;
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    functionLibraryName37,
+                                                    dummyWrappedType,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
+                                                    "getFunctionLibrary")));
+                                                
+        //adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // set the message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message contxt to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        //execute the operation client
+        _operationClient.execute(true);
+
+         
+               org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(
+                                           org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+                org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+                
+                
+                                java.lang.Object object = fromOM(
+                                             _returnEnv.getBody().getFirstElement() ,
+                                             org.wso2.carbon.function.mgt.GetFunctionLibraryResponse.class,
+                                              getEnvelopeNamespaces(_returnEnv));
+
+                               
+                                        return getGetFunctionLibraryResponse_return((org.wso2.carbon.function.mgt.GetFunctionLibraryResponse)object);
+                                   
+         }catch(org.apache.axis2.AxisFault f){
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt!=null){
+                if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getFunctionLibrary"))){
+                    //make the fault by reflection
+                    try{
+                        java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getFunctionLibrary"));
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                        //message class
+                        java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getFunctionLibrary"));
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+                                   new java.lang.Class[]{messageClass});
+                        m.invoke(ex,new java.lang.Object[]{messageObject});
+                        
+                        if (ex instanceof org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException){
+                          throw (org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException)ex;
+                        }
+                        
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    }catch(java.lang.ClassCastException e){
+                       // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }  catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }   catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original Axis fault
+                        throw f;
+                    }
+                }else{
+                    throw f;
+                }
+            }else{
+                throw f;
+            }
+            } finally {
+                if (_messageContext.getTransportOut() != null) {
+                      _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                }
+            }
+        }
+            
+                /**
+                * Auto generated method signature for Asynchronous Invocations
+                * 
+                * @see org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminService#startgetFunctionLibrary
+                    * @param getFunctionLibrary36
+                
+                */
+                public  void startgetFunctionLibrary(
+
+                 java.lang.String functionLibraryName37,
+
+                  final org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceCallbackHandler callback)
+
+                throws java.rmi.RemoteException{
+
+              org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
+             _operationClient.getOptions().setAction("urn:getFunctionLibrary");
+             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+              
+              
+                  addPropertyToOperationClient(_operationClient,org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,"&");
+              
+
+
+              // create SOAP envelope with that payload
+              org.apache.axiom.soap.SOAPEnvelope env=null;
+              final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+                    
+                                    //Style is Doc.
+                                    org.wso2.carbon.function.mgt.GetFunctionLibrary dummyWrappedType = null;
+                                                    env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
+                                                    functionLibraryName37,
+                                                     dummyWrappedType,
+                                                    optimizeContent(new javax.xml.namespace.QName("http://mgt.function.carbon.wso2.org",
+                                                    "getFunctionLibrary")));
+                                                
+        // adding SOAP soap_headers
+         _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+
+                    
+                        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+                            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                            try {
+                                org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+                                
+                                        java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
+                                                                         org.wso2.carbon.function.mgt.GetFunctionLibraryResponse.class,
+                                                                         getEnvelopeNamespaces(resultEnv));
+                                        callback.receiveResultgetFunctionLibrary(
+                                            getGetFunctionLibraryResponse_return((org.wso2.carbon.function.mgt.GetFunctionLibraryResponse)object));
+                                        
+                            } catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetFunctionLibrary(e);
+                            }
+                            }
+
+                            public void onError(java.lang.Exception error) {
+								if (error instanceof org.apache.axis2.AxisFault) {
+									org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+									org.apache.axiom.om.OMElement faultElt = f.getDetail();
+									if (faultElt!=null){
+										if (faultExceptionNameMap.containsKey(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getFunctionLibrary"))){
+											//make the fault by reflection
+											try{
+													java.lang.String exceptionClassName = (java.lang.String)faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getFunctionLibrary"));
+													java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+													java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+													//message class
+													java.lang.String messageClassName = (java.lang.String)faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(faultElt.getQName(),"getFunctionLibrary"));
+														java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+													java.lang.Object messageObject = fromOM(faultElt,messageClass,null);
+													java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+															new java.lang.Class[]{messageClass});
+													m.invoke(ex,new java.lang.Object[]{messageObject});
+													
+													if (ex instanceof org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException){
+														callback.receiveErrorgetFunctionLibrary((org.wso2.carbon.function.mgt.stub.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException)ex);
+											            return;
+										            }
+										            
+					
+										            callback.receiveErrorgetFunctionLibrary(new java.rmi.RemoteException(ex.getMessage(), ex));
+                                            } catch(java.lang.ClassCastException e){
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorgetFunctionLibrary(f);
+                                            } catch (java.lang.ClassNotFoundException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorgetFunctionLibrary(f);
+                                            } catch (java.lang.NoSuchMethodException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorgetFunctionLibrary(f);
+                                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorgetFunctionLibrary(f);
+                                            } catch (java.lang.IllegalAccessException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorgetFunctionLibrary(f);
+                                            } catch (java.lang.InstantiationException e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorgetFunctionLibrary(f);
+                                            } catch (org.apache.axis2.AxisFault e) {
+                                                // we cannot intantiate the class - throw the original Axis fault
+                                                callback.receiveErrorgetFunctionLibrary(f);
+                                            }
+									    } else {
+										    callback.receiveErrorgetFunctionLibrary(f);
+									    }
+									} else {
+									    callback.receiveErrorgetFunctionLibrary(f);
+									}
+								} else {
+								    callback.receiveErrorgetFunctionLibrary(error);
+								}
+                            }
+
+                            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                                onError(fault);
+                            }
+
+                            public void onComplete() {
+                                try {
+                                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                                } catch (org.apache.axis2.AxisFault axisFault) {
+                                    callback.receiveErrorgetFunctionLibrary(axisFault);
+                                }
+                            }
+                });
                         
 
           org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
@@ -1255,12 +1315,12 @@
         return false;
     }
      //https://localhost:9443/services/FunctionLibraryManagementAdminService.FunctionLibraryManagementAdminServiceHttpsSoap12Endpoint/
-            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.LoadFunctionLibrary param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.ListFunctionLibraries param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(org.wso2.carbon.function.mgt.LoadFunctionLibrary.MY_QNAME,
+                             return param.getOMElement(org.wso2.carbon.function.mgt.ListFunctionLibraries.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1269,12 +1329,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse.MY_QNAME,
+                             return param.getOMElement(org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1283,26 +1343,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.GetAllFunctionLibraries param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(org.wso2.carbon.function.mgt.GetAllFunctionLibraries.MY_QNAME,
-                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-                        } catch(org.apache.axis2.databinding.ADBException e){
-                            throw org.apache.axis2.AxisFault.makeFault(e);
-                        }
-                    
-
-            }
-        
-            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse param, boolean optimizeContent)
-            throws org.apache.axis2.AxisFault {
-
-            
-                        try{
-                             return param.getOMElement(org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse.MY_QNAME,
+                             return param.getOMElement(org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1353,22 +1399,47 @@
 
             }
         
+            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.GetFunctionLibrary param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(org.wso2.carbon.function.mgt.GetFunctionLibrary.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
+            private  org.apache.axiom.om.OMElement  toOM(org.wso2.carbon.function.mgt.GetFunctionLibraryResponse param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
+
+            
+                        try{
+                             return param.getOMElement(org.wso2.carbon.function.mgt.GetFunctionLibraryResponse.MY_QNAME,
+                                          org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+                        } catch(org.apache.axis2.databinding.ADBException e){
+                            throw org.apache.axis2.AxisFault.makeFault(e);
+                        }
+                    
+
+            }
+        
                                     
                                 private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory,
-                                    java.lang.String param1,
-                                    org.wso2.carbon.function.mgt.LoadFunctionLibrary dummyWrappedType,
+                                    org.wso2.carbon.function.mgt.ListFunctionLibraries dummyWrappedType,
                                  boolean optimizeContent) throws org.apache.axis2.AxisFault{
 
                                 try{
-                                org.wso2.carbon.function.mgt.LoadFunctionLibrary wrappedType = new org.wso2.carbon.function.mgt.LoadFunctionLibrary();
+                                org.wso2.carbon.function.mgt.ListFunctionLibraries wrappedType = new org.wso2.carbon.function.mgt.ListFunctionLibraries();
 
                                  
-                                              wrappedType.setFunctionLibraryName(param1);
-                                         
 
                                org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
                                   
-                                        emptyEnvelope.getBody().addChild(wrappedType.getOMElement(org.wso2.carbon.function.mgt.LoadFunctionLibrary.MY_QNAME,factory));
+                                        emptyEnvelope.getBody().addChild(wrappedType.getOMElement(org.wso2.carbon.function.mgt.ListFunctionLibraries.MY_QNAME,factory));
                                     
 
                                 return emptyEnvelope;
@@ -1386,45 +1457,8 @@
                              
 
                                 
-                                private org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary getLoadFunctionLibraryResponse_return(
-                                org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse wrappedType){
-                                
-                                        return wrappedType.get_return();
-                                    
-                                }
-                             
-                                    
-                                private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory,
-                                    org.wso2.carbon.function.mgt.GetAllFunctionLibraries dummyWrappedType,
-                                 boolean optimizeContent) throws org.apache.axis2.AxisFault{
-
-                                try{
-                                org.wso2.carbon.function.mgt.GetAllFunctionLibraries wrappedType = new org.wso2.carbon.function.mgt.GetAllFunctionLibraries();
-
-                                 
-
-                               org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                  
-                                        emptyEnvelope.getBody().addChild(wrappedType.getOMElement(org.wso2.carbon.function.mgt.GetAllFunctionLibraries.MY_QNAME,factory));
-                                    
-
-                                return emptyEnvelope;
-                               } catch(org.apache.axis2.databinding.ADBException e){
-                                    throw org.apache.axis2.AxisFault.makeFault(e);
-                               }
-                               }
-
-
-
-                                
-                             
-                             /* methods to provide back word compatibility */
-
-                             
-
-                                
-                                private org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary[] getGetAllFunctionLibrariesResponse_return(
-                                org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse wrappedType){
+                                private org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary[] getListFunctionLibrariesResponse_return(
+                                org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse wrappedType){
                                 
                                         return wrappedType.get_return();
                                     
@@ -1526,6 +1560,46 @@
                              /* methods to provide back word compatibility */
 
                              
+                                    
+                                private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory,
+                                    java.lang.String param1,
+                                    org.wso2.carbon.function.mgt.GetFunctionLibrary dummyWrappedType,
+                                 boolean optimizeContent) throws org.apache.axis2.AxisFault{
+
+                                try{
+                                org.wso2.carbon.function.mgt.GetFunctionLibrary wrappedType = new org.wso2.carbon.function.mgt.GetFunctionLibrary();
+
+                                 
+                                              wrappedType.setFunctionLibraryName(param1);
+                                         
+
+                               org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+                                  
+                                        emptyEnvelope.getBody().addChild(wrappedType.getOMElement(org.wso2.carbon.function.mgt.GetFunctionLibrary.MY_QNAME,factory));
+                                    
+
+                                return emptyEnvelope;
+                               } catch(org.apache.axis2.databinding.ADBException e){
+                                    throw org.apache.axis2.AxisFault.makeFault(e);
+                               }
+                               }
+
+
+
+                                
+                             
+                             /* methods to provide back word compatibility */
+
+                             
+
+                                
+                                private org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary getGetFunctionLibraryResponse_return(
+                                org.wso2.carbon.function.mgt.GetFunctionLibraryResponse wrappedType){
+                                
+                                        return wrappedType.get_return();
+                                    
+                                }
+                             
 
 
         /**
@@ -1543,30 +1617,23 @@
 
         try {
         
-                if (org.wso2.carbon.function.mgt.LoadFunctionLibrary.class.equals(type)){
+                if (org.wso2.carbon.function.mgt.ListFunctionLibraries.class.equals(type)){
                 
-                           return org.wso2.carbon.function.mgt.LoadFunctionLibrary.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return org.wso2.carbon.function.mgt.ListFunctionLibraries.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse.class.equals(type)){
+                if (org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse.class.equals(type)){
                 
-                           return org.wso2.carbon.function.mgt.LoadFunctionLibraryResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return org.wso2.carbon.function.mgt.ListFunctionLibrariesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (org.wso2.carbon.function.mgt.GetAllFunctionLibraries.class.equals(type)){
+                if (org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.class.equals(type)){
                 
-                           return org.wso2.carbon.function.mgt.GetAllFunctionLibraries.Factory.parse(param.getXMLStreamReaderWithoutCaching());
-                    
-
-                }
-           
-                if (org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse.class.equals(type)){
-                
-                           return org.wso2.carbon.function.mgt.GetAllFunctionLibrariesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
@@ -1578,6 +1645,13 @@
 
                 }
            
+                if (org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.class.equals(type)){
+                
+                           return org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
                 if (org.wso2.carbon.function.mgt.DeleteFunctionLibrary.class.equals(type)){
                 
                            return org.wso2.carbon.function.mgt.DeleteFunctionLibrary.Factory.parse(param.getXMLStreamReaderWithoutCaching());
@@ -1585,9 +1659,44 @@
 
                 }
            
+                if (org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.class.equals(type)){
+                
+                           return org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
                 if (org.wso2.carbon.function.mgt.UpdateFunctionLibrary.class.equals(type)){
                 
                            return org.wso2.carbon.function.mgt.UpdateFunctionLibrary.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.class.equals(type)){
+                
+                           return org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (org.wso2.carbon.function.mgt.GetFunctionLibrary.class.equals(type)){
+                
+                           return org.wso2.carbon.function.mgt.GetFunctionLibrary.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (org.wso2.carbon.function.mgt.GetFunctionLibraryResponse.class.equals(type)){
+                
+                           return org.wso2.carbon.function.mgt.GetFunctionLibraryResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                    
+
+                }
+           
+                if (org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.class.equals(type)){
+                
+                           return org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceFunctionLibraryManagementException.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

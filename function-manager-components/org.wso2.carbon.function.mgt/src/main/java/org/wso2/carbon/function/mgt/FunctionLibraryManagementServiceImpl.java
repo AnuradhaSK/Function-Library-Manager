@@ -7,7 +7,6 @@ import org.wso2.carbon.function.mgt.dao.impl.FunctionLibraryDAOImpl;
 import org.wso2.carbon.function.mgt.exception.FunctionLibraryManagementException;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 
-import java.util.List;
 
 public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagementService {
 
@@ -34,15 +33,15 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
         functionLibraryDAO.createFunctionLibrary(functionLibrary, tenantDomain);
     }
 
-    public FunctionLibrary[] getAllFunctionLibraries(String tenantDomain) throws FunctionLibraryManagementException {
+    public FunctionLibrary[] listFunctionLibraries(String tenantDomain) throws FunctionLibraryManagementException {
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
-        return functionLibraryDAO.getAllFunctionLibraries(tenantDomain);
+        return functionLibraryDAO.listFunctionLibraries(tenantDomain);
 
     }
 
-    public FunctionLibrary  loadFunctionLibrary(String functionLibraryName, String tenantDomain){
+    public FunctionLibrary  getFunctionLibrary(String functionLibraryName, String tenantDomain) throws FunctionLibraryManagementException {
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
-        return functionLibraryDAO.loadFunctionLibrary(functionLibraryName,tenantDomain);
+        return functionLibraryDAO.getFunctionLibrary(functionLibraryName,tenantDomain);
     }
 
     public void deleteFunctionLibrary(String functionLibraryName, String tenantDomain) throws FunctionLibraryManagementException {
