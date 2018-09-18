@@ -36,12 +36,17 @@ public class FunctionLibraryManagementServiceClient {
 
     }
 
+
     public void createFunctionLibrary (FunctionLibrary functionLibrary) throws AxisFault {
+
+
             /*if(debugEnabled) {
+
                 log.debug("Registering function library" + functionLibrary.getFunctionLibraryName());
             }*/
             try {
                 stub.createFunctionLibrary(functionLibrary);
+
             } catch (  RemoteException | FunctionLibraryManagementAdminServiceFunctionLibraryManagementException e) {
                 System.out.println(e);
                 handleException(e);
@@ -50,49 +55,64 @@ public class FunctionLibraryManagementServiceClient {
     }
 
     public FunctionLibrary[] listFunctionLibraries () throws AxisFault {
+
         try {
             /*if(debugEnabled){
                 log.debug("Loading function libraries from DB");
+
             }*/
             return stub.listFunctionLibraries();
         } catch (RemoteException | FunctionLibraryManagementAdminServiceFunctionLibraryManagementException e) {
             handleException(e);
-        }
+
+            }
+
         return new FunctionLibrary[0];
     }
 
     public FunctionLibrary getFunctionLibrary (String functionLibraryName) throws AxisFault {
+
+
         try {
             /*if(debugEnabled){
                 log.debug("Loading function library "+ functionLibraryName);
+
             }*/
             return stub.getFunctionLibrary(functionLibraryName);
         } catch (RemoteException | FunctionLibraryManagementAdminServiceFunctionLibraryManagementException e) {
            handleException(e);
-        }
+
+            }
 
         return null;
     }
 
+
     public void deleteFunctionLibrary (String functionLibraryName) throws AxisFault {
+
         try {
             /*if(debugEnabled){
                 log.debug("Removing function library "+ functionLibraryName);
             }*/
             stub.deleteFunctionLibrary(functionLibraryName);
+
         } catch (RemoteException | FunctionLibraryManagementAdminServiceFunctionLibraryManagementException e) {
            handleException(e);
         }
     }
 
     public void updateFunctionLibrary (FunctionLibrary functionLibrary, String oldFunctionLibraryName) throws AxisFault {
+
+
         try {
             /*if(debugEnabled){
                 log.debug("Updating function library "+ oldFunctionLibraryName);
             }*/
             stub.updateFunctionLibrary(functionLibrary,oldFunctionLibraryName);
+
         } catch (RemoteException | FunctionLibraryManagementAdminServiceFunctionLibraryManagementException e) {
            handleException(e);
+
         }
     }
 

@@ -51,12 +51,12 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
                     functionLibrary.getFunctionLibraryName() + " is not valid! It is not adhering " +
                     "to the regex " + FunctionLibraryMgtUtil.FUNCTION_LIBRARY_NAME_VALIDATING_REGEX);
         }
+
         try{
             functionLibraryDAO.createFunctionLibrary(functionLibrary, tenantDomain);
         }catch (FunctionLibraryManagementException e){
             throw e;
         }
-
 
     }
 
@@ -85,7 +85,7 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
 
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
 
-        if (!functionLibrary.getFunctionLibraryName().equals(oldFunctionLibraryName) && functionLibraryDAO.isFunctionLibraryExists(functionLibrary.getFunctionLibraryName(), tenantDomain)) {
+        if ( !functionLibrary.getFunctionLibraryName().equals(oldFunctionLibraryName) && functionLibraryDAO.isFunctionLibraryExists(functionLibrary.getFunctionLibraryName(), tenantDomain)) {
             System.out.println("Thrown--------Already a function library available with the same name.");
             throw new FunctionLibraryManagementException("Already a function library available with the same name.");
         }
@@ -96,7 +96,8 @@ public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagem
                     functionLibrary.getFunctionLibraryName() + " is not valid! It is not adhering " +
                     "to the regex " + FunctionLibraryMgtUtil.FUNCTION_LIBRARY_NAME_VALIDATING_REGEX);
         }
-      try{ functionLibraryDAO.updateFunctionLibrary(functionLibrary,tenantDomain,oldFunctionLibraryName);
+      try{
+          functionLibraryDAO.updateFunctionLibrary(functionLibrary,tenantDomain,oldFunctionLibraryName);
       }catch (FunctionLibraryManagementException e){
           throw e;
       }
