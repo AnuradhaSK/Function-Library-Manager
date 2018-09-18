@@ -35,7 +35,7 @@
 <script type="text/javascript" src="../identity/validation/js/identity-validate.js"></script>
 
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="carbon" uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar"%>s
+<%@ taglib prefix="carbon" uri="http://wso2.org/projects/carbon/taglibs/carbontags.jar"%>
 
 
 <script type="text/javascript">

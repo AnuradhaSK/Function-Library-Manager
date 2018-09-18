@@ -11,11 +11,11 @@
            <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
         </operation>
 
-        <operation name="getAllFunctionLibraries">
+        <operation name="listFunctionLibraries">
             <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
         </operation>
 
-        <operation name="loadFunctionLibrary">
+        <operation name="getFunctionLibrary">
             <parameter name="AuthorizationAction" locked="true">/permission/protected/manage</parameter>
         </operation>
 

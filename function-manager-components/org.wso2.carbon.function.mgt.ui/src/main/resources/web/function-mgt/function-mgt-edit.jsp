@@ -83,7 +83,7 @@
                 ConfigurationContext configContext = (ConfigurationContext) config.getServletContext().getAttribute(CarbonConstants.CONFIGURATION_CONTEXT);
 
                 FunctionLibraryManagementServiceClient serviceClient = new FunctionLibraryManagementServiceClient(cookie, backendServerURL, configContext);
-                functionLibrary = serviceClient.loadFunctionLibrary(functionLibraryName);
+                functionLibrary = serviceClient.getFunctionLibrary(functionLibraryName);
 
 
             } catch (Exception e) {
@@ -115,10 +115,10 @@
                             </td>
                         </tr>
                         <tr>
+
                             <td class="leftCol-med labelField">Description:</td>
                             <td>
-                                <textarea style="width:50%" type="text" name="function-description" id="function-description" class="text-box-big">
-                                    <%=functionLibrary.getDescription() != null ? Encode.forHtmlAttribute(functionLibrary.getDescription()) : "" %>
+                                <textarea style="width:50%" type="text" name="functionLib-description" id="functionLib-description" class="text-box-big"><%=functionLibrary.getDescription() != null ? Encode.forHtmlContent(functionLibrary.getDescription()):""%>
                                 </textarea>
                                 <div class="sectionHelp">
                                     <fmt:message key='help.desc'/>
@@ -136,8 +136,7 @@
                         <div id="codeMirror">
             <textarea id="scriptTextArea" name="scriptTextArea"
                       placeholder="Write JavaScript Function..."
-                      style="height: 500px;width: 100%; display: block;">
-            <%=functionLibrary.getFunctionLibraryScript() != null ? Encode.forHtmlAttribute(functionLibrary.getFunctionLibraryScript()) : "" %>
+                      style="height: 500px;width: 100%; display: block;"><%=functionLibrary.getFunctionLibraryScript() != null ? Encode.forHtmlContent(functionLibrary.getFunctionLibraryScript()) : "" %>
             </textarea>
 
                         </div>

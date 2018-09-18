@@ -6,6 +6,7 @@
 <%@ page import="org.wso2.carbon.function.mgt.ui.client.FunctionLibraryManagementServiceClient" %>
 <%@ page import="org.wso2.carbon.ui.CarbonUIMessage" %>
 <%@ page import="org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary" %>
+<%@ page import="org.owasp.encoder.Encode" %>
 
 <%
     String httpMethod = request.getMethod();
@@ -16,7 +17,7 @@
 
     String functionLibraryName = request.getParameter("functionLibraryName");
     String oldFunctionLibraryName = request.getParameter("oldFunctionLibraryName");
-    String description = request.getParameter("function-description");
+    String description = request.getParameter("functionLib-description");
     String content = request.getParameter("scriptTextArea");
 
 
@@ -39,12 +40,18 @@
                     .getAttribute(CarbonConstants.CONFIGURATION_CONTEXT);
 
             FunctionLibraryManagementServiceClient serviceClient = new FunctionLibraryManagementServiceClient(cookie, backendServerURL, configContext);
-            serviceClient.updateFunctionLibrary(functionLibrary,oldFunctionLibraryName);
+            serviceClient.updateFunctionLibrary(functionLibrary, oldFunctionLibraryName);
 
 
         } catch (Exception e) {
             String message = resourceBundle.getString("alert.error.while.updatinging.function.libraries") + " : " + e.getMessage();
             CarbonUIMessage.sendCarbonUIMessage(message, CarbonUIMessage.ERROR, request, e);
+%>
+
+<script>
+    location.href = "load-function-library.jsp?functionLibraryName=<%=Encode.forUriComponent(oldFunctionLibraryName)%>"
+</script>
+<%
         }
     }
 

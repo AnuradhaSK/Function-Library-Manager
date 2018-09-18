@@ -37,11 +37,11 @@ try{
 </script>
 <%
 } catch (Exception e) {
+
     CarbonUIMessage.sendCarbonUIMessage(e.getMessage(), CarbonUIMessage.ERROR, request, e);
 %>
 <script>
-    location.href = 'function-mgt-list.jsp';
-    console.log('error');
+    location.href = 'function-mgt-add.jsp';
 </script>
 <%
     }
@@ -49,7 +49,6 @@ try{
 %>
 <script>
     location.href = 'function-mgt-add.jsp';
-    console.log('error');
 </script>
 <%
     }%>
