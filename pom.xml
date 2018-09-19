@@ -65,6 +65,16 @@
             <artifactId>org.wso2.carbon.identity.core</artifactId>
             <version>5.12.54</version>
         </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.ui</artifactId>
+            <version>${carbon.kernel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.ui.menu.tools</artifactId>
+            <version>${carbon.kernel.version}</version>
+        </dependency>
     </dependencies>
 
     <pluginRepositories>
@@ -149,6 +159,7 @@
         <commons-logging.osgi.version.range>[1.2,2.0)</commons-logging.osgi.version.range>
         <commons-collections.wso2.osgi.version.range>[3.2.0,4.0.0)</commons-collections.wso2.osgi.version.range>
 
+        <carbon.kernel.version>4.4.34</carbon.kernel.version>
         <carbon.kernel.package.import.version.range>[4.4.0, 5.0.0)</carbon.kernel.package.import.version.range>
 
     </properties>

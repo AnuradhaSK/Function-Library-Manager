@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.ui</artifactId>
-            <version>4.4.27</version>
+            <version>4.4.34</version>
         </dependency>
     </dependencies>
 
@@ -58,6 +58,7 @@
                             javax.activation; version="${javax.activation.import.pkg.version}",
                             org.osgi.service.component; version="${osgi.service.component.imp.pkg.version.range}",
                             org.wso2.carbon.ui.util; version="${carbon.kernel.package.import.version.range}",
+                            org.wso2.carbon.utils; version="${carbon.kernel.package.import.version.range}",
 
                             org.apache.commons.logging; version="${commons-logging.osgi.version.range}",
                             org.apache.commons.collections; version="${commons-collections.wso2.osgi.version.range}"
