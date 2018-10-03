@@ -9,7 +9,7 @@
             <region>region1</region>
             <order>5</order>
             <style-class>manage</style-class>
-            <icon>../function-mgt/images/library.gif</icon>
+            <icon>../function-mgt/images/script.png</icon>
             <require-permission>/permission/protected/manage</require-permission>
             <require-not-logged-in>false</require-not-logged-in>
         </menu>

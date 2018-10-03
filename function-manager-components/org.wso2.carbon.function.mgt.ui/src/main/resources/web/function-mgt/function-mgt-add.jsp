@@ -156,16 +156,16 @@
                 <div id="codeMirror" class="sectionSub step_contents" >
             <textarea id="scriptTextArea" name="scriptTextArea"
             placeholder="Write JavaScript Function..."
-            style="height: 500px;width: 100%; display: block;">
+            style="height: 500px;width: 100%; display: none;">
 
             </textarea>
                 </div>
                     <div id="codeMirrorTemplate" class="step_contents">
-                        <div class="add-template-container vertical-text">
-                            <a id="addTemplate" class="icon-link noselect">Templates</a>
+                        <div class="add-functionlib-container vertical-text">
+                            <a id="addFunctionlib" class="icon-link noselect">Function Libraries</a>
                         </div>
-                        <div class="template-list-container">
-                            <ul id="template_list"></ul>
+                        <div class="functionlib-list-container">
+                            <ul id="functionlib_list"></ul>
                         </div>
                     </div>
 

@@ -1,45 +1,45 @@
 
-.templateName {
+.functionLibraryName {
     text-decoration: none;
     display: inline-table;
 }
-#template_list{
+#functionlib_list{
     height: 280px;
     overflow-y: scroll;
 }
-#template_list .name {
+#functionlib_list .name {
     padding: 4px;
     border: 1px solid #ccc;
     border-top: 0;
     height: 20px;
 }
-#template_list .name:after {
+#functionlib_list .name:after {
     content: ' ';
     clear: both;
 }
-#template_list .templateName span{
+#functionlib_list .functionLibraryName span{
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100px;
 }
-#template_list .type {
+#functionlib_list .type {
     margin-bottom: 4px;
 }
-#template_list .name a span{
+#functionlib_list .name a span{
     display: inline-block;
     vertical-align: top;
     margin-left: 5px;
 }
-#template_list .name a {
+#functionlib_list .name a {
     margin-top: 2px;
     float: left;
 }
-#template_list .name span {
+#functionlib_list .name span {
     float: right;
 }
-#template_list li h2{
+#functionlib_list li h2{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -51,7 +51,7 @@
     -moz-border-radius: 0px 0px 0px 0px;
     -webkit-border-radius: 0px 0px 0px 0px;
 }
-#template_list .helpLink{
+#functionlib_list .helpLink{
     display: inline-table;
     margin-top: 4px;
 
@@ -253,10 +253,10 @@
     border-bottom: 1px solid #afafaf;
     cursor: pointer;
 }
-#addTemplate:hover, #toggleEditorSize:hover{
+#addFunctionlib:hover, #toggleEditorSize:hover{
     background-color: rgba(204, 204, 204, 0.9);
 }
-#addTemplate{
+#addFunctionlib{
     background:url('../images/templates.png') 5px 50% no-repeat;
     background-color: rgba(204, 204, 204, 0.4);
     height: auto;
@@ -271,7 +271,7 @@
     padding-top: 20px;
     padding-bottom: 10px;
 }
-.add-template-container{
+.add-functionlib-container{
     position: absolute;
     left: 25px;
 }
@@ -284,7 +284,7 @@
     height: 300px;
     width: 25px;
 }
-.template-list-container{
+.functionlib-list-container{
     margin: 10px;
     margin-left: 35px;
 }

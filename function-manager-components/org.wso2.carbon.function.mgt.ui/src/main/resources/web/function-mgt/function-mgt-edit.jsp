@@ -144,7 +144,7 @@
                         <div id="codeMirror">
             <textarea id="scriptTextArea" name="scriptTextArea"
                       placeholder="Write JavaScript Function..."
-                      style="height: 500px;width: 100%; display: block;"><%=functionLibrary.getFunctionLibraryScript() != null ? Encode.forHtmlContent(functionLibrary.getFunctionLibraryScript()) : "" %>
+                      style="height: 500px;width: 100%; display: none;"><%=functionLibrary.getFunctionLibraryScript() != null ? Encode.forHtmlContent(functionLibrary.getFunctionLibraryScript()) : "" %>
             </textarea>
 
                         </div>
