@@ -15,7 +15,7 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
 
     public void createFunctionLibrary (FunctionLibrary functionLibrary) throws FunctionLibraryManagementException{
         try {
-            functionLibMgtService = FunctionLibraryManagementService.getInstance();
+            functionLibMgtService = FunctionLibraryManagementServiceImpl.getInstance();
             functionLibMgtService.createFunctionLibrary(functionLibrary, getTenantDomain());
         }catch (FunctionLibraryManagementException flException){
             log.error("Error while creating function library "+functionLibrary.getFunctionLibraryName()+" for tenant domain "+getTenantDomain(),flException);
@@ -27,7 +27,7 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
 
     public FunctionLibrary[] listFunctionLibraries() throws FunctionLibraryManagementException{
         try {
-            functionLibMgtService = FunctionLibraryManagementService.getInstance();
+            functionLibMgtService = FunctionLibraryManagementServiceImpl.getInstance();
             FunctionLibrary[] functionLibraries = functionLibMgtService.listFunctionLibraries(getTenantDomain());
             return functionLibraries;
         }catch(FunctionLibraryManagementException flException){
@@ -38,7 +38,7 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
 
     public FunctionLibrary getFunctionLibrary(String functionLibraryName) throws FunctionLibraryManagementException {
         try {
-            functionLibMgtService =FunctionLibraryManagementService.getInstance();
+            functionLibMgtService =FunctionLibraryManagementServiceImpl.getInstance();
             FunctionLibrary functionLibrary = null;
             functionLibrary = functionLibMgtService.getFunctionLibrary(functionLibraryName,getTenantDomain());
             return functionLibrary;
@@ -51,7 +51,7 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
 
     public void deleteFunctionLibrary(String functionLibraryName) throws FunctionLibraryManagementException{
         try {
-        functionLibMgtService = FunctionLibraryManagementService.getInstance();
+        functionLibMgtService = FunctionLibraryManagementServiceImpl.getInstance();
         functionLibMgtService.deleteFunctionLibrary(functionLibraryName,getTenantDomain());
         } catch (FunctionLibraryManagementException flException) {
             log.error("Error while deleting function library "+ functionLibraryName+ " for tenant domain "+getTenantDomain(),flException);
@@ -62,7 +62,7 @@ public class FunctionLibraryManagementAdminService extends AbstractAdmin {
     public void updateFunctionLibrary(FunctionLibrary functionLibrary, String oldFunctionLibraryName) throws FunctionLibraryManagementException{
 
         try {
-            functionLibMgtService = FunctionLibraryManagementService.getInstance();
+            functionLibMgtService = FunctionLibraryManagementServiceImpl.getInstance();
             functionLibMgtService.updateFunctionLibrary(functionLibrary,getTenantDomain(),oldFunctionLibraryName);
         } catch (FunctionLibraryManagementException flException) {
             log.error("Error while updating function library "+oldFunctionLibraryName+ "for tenant domain "+ getTenantDomain(),flException);

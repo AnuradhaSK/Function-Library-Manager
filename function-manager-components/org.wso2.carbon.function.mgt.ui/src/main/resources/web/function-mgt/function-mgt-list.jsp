@@ -51,7 +51,8 @@
                         });
                     }
 
-                    CARBON.showConfirmationDialog('Are you sure you want to delete "' + functionLibraryName + '" Function Library?',
+                    CARBON.showConfirmationDialog('Are you sure you want to delete "' + functionLibraryName + '" Function Library? \n WARN: If you delete this library, ' +
+                        'the authentication scripts which used this will no longer function properly !',
                         doDelete, null);
                 }
             </script>

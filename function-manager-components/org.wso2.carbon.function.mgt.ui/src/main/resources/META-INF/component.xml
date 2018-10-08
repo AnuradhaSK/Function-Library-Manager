@@ -10,7 +10,7 @@
             <order>5</order>
             <style-class>manage</style-class>
             <icon>../function-mgt/images/script.png</icon>
-            <require-permission>/permission/protected/manage</require-permission>
+            <require-permission>/permission/admin/manage</require-permission>
             <require-not-logged-in>false</require-not-logged-in>
         </menu>
         <menu>
@@ -23,7 +23,7 @@
             <order>1</order>
             <style-class>manage</style-class>
             <icon>../function-mgt/images/add.gif</icon>
-            <require-permission>/permission/protected/manage</require-permission>
+            <require-permission>/permission/admin/manage</require-permission>
             <require-not-logged-in>false</require-not-logged-in>
         </menu>
         <menu>
@@ -36,7 +36,7 @@
             <order>2</order>
             <style-class>manage</style-class>
             <icon>../function-mgt/images/list.gif</icon>
-            <require-permission>/permission/protected/manage</require-permission>
+            <require-permission>/permission/admin/manage</require-permission>
             <require-not-logged-in>false</require-not-logged-in>
         </menu>
     </menus>

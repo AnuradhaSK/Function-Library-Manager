@@ -160,14 +160,14 @@
 
             </textarea>
                 </div>
-                    <div id="codeMirrorTemplate" class="step_contents">
+                   <!-- <div id="codeMirrorTemplate" class="step_contents">
                         <div class="add-functionlib-container vertical-text">
                             <a id="addFunctionlib" class="icon-link noselect">Function Libraries</a>
                         </div>
                         <div class="functionlib-list-container">
                             <ul id="functionlib_list"></ul>
                         </div>
-                    </div>
+                    </div>-->
 
         </div>
 

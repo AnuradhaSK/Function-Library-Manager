@@ -45,20 +45,32 @@
 <%@ page import="org.wso2.carbon.function.mgt.model.xsd.FunctionLibrary" %>
 <%@ page import="org.wso2.carbon.function.mgt.ui.client.FunctionLibraryManagementServiceClient" %>
 <%@ page import="org.owasp.encoder.Encode" %>
+<script type="text/javascript" src="../identity/validation/js/identity-validate.js"></script>
 <jsp:include page="../dialog/display_messages.jsp" />
 
 <script type="text/javascript">
     function UpdateFunctionLibOnclick() {
         var functionLibName = document.getElementById("functionLibraryName").value.trim();
+        var oldFunctionLibName = document.getElementById("oldFunctionLibraryName").value.trim();
         console.log(functionLibName);
         if( functionLibName == '') {
             CARBON.showWarningDialog('Please provide function library Name');
             location.href = '#';
-           /* } else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
+        /*} else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
                  return false;*/
         }else {
-            $("#update-functionlib-form").submit();
-            return true;
+            if(functionLibName != oldFunctionLibName){
+                CARBON.showConfirmationDialog('Are you sure you want to edit "' + oldFunctionLibName + '" Function Library name ? \n WARN: If you edit this library name, ' +
+                    'the authentication scripts which used this will no longer function properly !',
+                    doEdit,null);
+            }
+            else{
+                doEdit();
+            }
+            function doEdit(){
+                $("#update-functionlib-form").submit();
+                return true;
+            }
         }
     }
     function validateTextForIllegal(fild) {

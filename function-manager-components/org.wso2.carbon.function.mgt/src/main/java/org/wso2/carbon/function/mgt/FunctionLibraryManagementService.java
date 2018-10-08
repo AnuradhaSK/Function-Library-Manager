@@ -3,24 +3,21 @@ package org.wso2.carbon.function.mgt;
 import org.wso2.carbon.function.mgt.exception.FunctionLibraryManagementException;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 
-public abstract class FunctionLibraryManagementService {
+public interface FunctionLibraryManagementService {
 
-    public static FunctionLibraryManagementService getInstance () {
-        return FunctionLibraryManagementServiceImpl.getInstance();
-    }
 
-    public abstract void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain)
+    void createFunctionLibrary(FunctionLibrary functionLibrary, String tenantDomain)
             throws FunctionLibraryManagementException;
 
-    public abstract FunctionLibrary[] listFunctionLibraries (String tenantDomain)
+    FunctionLibrary[] listFunctionLibraries (String tenantDomain)
             throws FunctionLibraryManagementException;
 
-    public abstract  FunctionLibrary getFunctionLibrary (String functionLibraryName, String tenantDomain)
+    FunctionLibrary getFunctionLibrary (String functionLibraryName, String tenantDomain)
             throws FunctionLibraryManagementException;
 
-    public abstract void deleteFunctionLibrary (String functionLibraryName, String tenantDomain)
+    void deleteFunctionLibrary (String functionLibraryName, String tenantDomain)
             throws FunctionLibraryManagementException;
 
-    public abstract void updateFunctionLibrary (FunctionLibrary functionLibrary,String tenatDomain, String oldFunctionLibraryName)
+    void updateFunctionLibrary (FunctionLibrary functionLibrary,String tenatDomain, String oldFunctionLibraryName)
             throws FunctionLibraryManagementException;
 }

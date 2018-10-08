@@ -16,13 +16,12 @@ import org.wso2.carbon.function.mgt.FunctionLibraryManagementServiceImpl;
 )
 public class FunctionLibraryManagementServiceComponent {
     private static Log log = LogFactory.getLog(FunctionLibraryManagementServiceComponent.class);
-    private static BundleContext bundleContext;
 
     @Activate
     protected void activate(ComponentContext context) {
-        bundleContext = context.getBundleContext();
+        BundleContext bundleContext = context.getBundleContext();
         // Registering Functionl= library management service as a OSGIService
-        bundleContext.registerService(FunctionLibraryManagementService.class.getName(), FunctionLibraryManagementServiceImpl.getInstance(),null);
+        bundleContext.registerService(FunctionLibraryManagementService.class, FunctionLibraryManagementServiceImpl.getInstance(),null);
         if (log.isDebugEnabled()) {
             log.debug("Function Library ManagementComponent bundle is activated");
         }

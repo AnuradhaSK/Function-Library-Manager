@@ -11,7 +11,7 @@ import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 import static org.wso2.carbon.function.mgt.FunctionLibraryMgtUtil.isRegexValidated;
 
 
-public class FunctionLibraryManagementServiceImpl extends FunctionLibraryManagementService {
+public class FunctionLibraryManagementServiceImpl implements FunctionLibraryManagementService {
 
     private static final Log log = LogFactory.getLog(FunctionLibraryManagementServiceImpl.class);
     private static volatile FunctionLibraryManagementServiceImpl functionLibMgtService;

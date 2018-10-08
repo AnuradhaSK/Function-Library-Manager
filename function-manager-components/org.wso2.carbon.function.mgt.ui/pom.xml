@@ -54,7 +54,9 @@
                         </Export-Package>
                         <Import-Package>
                             javax.servlet.http,
-                            org.wso2.carbon.function.mgt.*,
+                            org.wso2.carbon.function.mgt.stub.*;version="${carbon.identity.functionlib.package.import.version}",
+                            org.wso2.carbon.function.mgt.exception.xsd.*;version="${carbon.identity.functionlib.package.import.version}",
+                            org.wso2.carbon.function.mgt.model.xsd.*;version="${carbon.identity.functionlib.package.import.version}",
                             javax.activation; version="${javax.activation.import.pkg.version}",
                             org.osgi.service.component; version="${osgi.service.component.imp.pkg.version.range}",
                             org.wso2.carbon.ui.util; version="${carbon.kernel.package.import.version.range}",
