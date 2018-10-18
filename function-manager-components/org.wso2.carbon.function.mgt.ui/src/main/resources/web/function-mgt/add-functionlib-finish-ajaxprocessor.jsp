@@ -22,7 +22,7 @@
     if (functionLibName != null && !"".equals(functionLibName)) {
 
         FunctionLibrary functionLibrary = new FunctionLibrary();
-        functionLibrary.setFunctionLibraryName(functionLibName);
+        functionLibrary.setFunctionLibraryName(functionLibName+".js");
         functionLibrary.setDescription(description);
         functionLibrary.setFunctionLibraryScript(content);
 

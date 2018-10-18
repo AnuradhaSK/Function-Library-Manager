@@ -59,6 +59,7 @@
         /*} else if (!validateTextForIllegal(document.getElementById("functionLibName"))) {
                  return false;*/
         }else {
+            functionLibName = functionLibName+".js";
             if(functionLibName != oldFunctionLibName){
                 CARBON.showConfirmationDialog('Are you sure you want to edit "' + oldFunctionLibName + '" Function Library name ? \n WARN: If you edit this library name, ' +
                     'the authentication scripts which used this will no longer function properly !',
@@ -80,6 +81,9 @@
         } else {
             return false;
         }
+    }
+    function removeJsSufix(functionLibName) {
+       return functionLibName.substring(0, str.length - 3);
     }
 </script>
 <fmt:bundle
@@ -128,7 +132,8 @@
                         <tr>
                             <td style="width:15%" class="leftCol-med labelField"><fmt:message key='config.function.info.basic.name'/>:<span class="required">*</span></td>
                             <td>
-                                <input id="functionLibraryName" name="functionLibraryName" type="text" value="<%=Encode.forHtmlAttribute(functionLibraryName)%>" white-list-patterns="^[a-zA-Z0-9\s._-]*$" autofocus/>
+                                <input id="functionLibraryName" name="functionLibraryName" type="text" value="<%=Encode.forHtmlAttribute(functionLibraryName.substring(0, functionLibraryName.length()-3))%>" white-list-patterns="^[a-zA-Z0-9\s._-]*$" autofocus/>
+                                <span>.js</span>
                                 <div class="sectionHelp">
                                     <fmt:message key='help.name'/>
                                 </div>
@@ -138,7 +143,7 @@
 
                             <td class="leftCol-med labelField">Description:</td>
                             <td>
-                                <textarea style="width:50%" type="text" name="functionLib-description" id="functionLib-description" class="text-box-big"><%=functionLibrary.getDescription() != null ? Encode.forHtmlContent(functionLibrary.getDescription()):""%>
+                                <textarea maxlength="1020" style=" width:50%" type="text" name="functionLib-description" id="functionLib-description" class="text-box-big"><%=functionLibrary.getDescription() != null ? Encode.forHtmlContent(functionLibrary.getDescription()):""%>
                                 </textarea>
                                 <div class="sectionHelp">
                                     <fmt:message key='help.desc'/>

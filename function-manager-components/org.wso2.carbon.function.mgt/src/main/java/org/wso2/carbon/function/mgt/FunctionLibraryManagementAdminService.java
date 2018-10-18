@@ -3,6 +3,7 @@ package org.wso2.carbon.function.mgt;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.wso2.carbon.context.CarbonContext;
 import org.wso2.carbon.function.mgt.exception.FunctionLibraryManagementException;
 import org.wso2.carbon.function.mgt.model.FunctionLibrary;
 import org.wso2.carbon.core.AbstractAdmin;

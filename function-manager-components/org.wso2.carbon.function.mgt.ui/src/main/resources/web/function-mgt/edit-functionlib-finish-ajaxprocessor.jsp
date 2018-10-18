@@ -28,7 +28,7 @@
 
         FunctionLibrary functionLibrary = new FunctionLibrary();
 
-        functionLibrary.setFunctionLibraryName(functionLibraryName);
+        functionLibrary.setFunctionLibraryName(functionLibraryName+".js");
         functionLibrary.setDescription(description);
         functionLibrary.setFunctionLibraryScript(content);
 

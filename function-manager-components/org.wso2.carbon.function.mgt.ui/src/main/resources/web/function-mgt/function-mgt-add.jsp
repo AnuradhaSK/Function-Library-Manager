@@ -129,6 +129,7 @@
                         <td style="width:15%" class="leftCol-med labelField"><fmt:message key='config.function.info.basic.name'/>:<span class="required">*</span></td>
                         <td>
                             <input id="functionLibName" name="functionLibName" type="text" value="" white-list-patterns="^[a-zA-Z0-9\s._-]*$" autofocus/>
+                            <span>.js</span>
                             <div class="sectionHelp">
                                 <fmt:message key='help.name'/>
                             </div>
@@ -139,7 +140,7 @@
 
                         <td class="leftCol-med labelField">Description:</td>
                         <td>
-                            <textarea style="width:50%" type="text" name="functionLib-description" id="functionLib-description" class="text-box-big"></textarea>
+                            <textarea  maxlength="1020" style="width:50%" type="text" name="functionLib-description" id="functionLib-description" class="text-box-big"></textarea>
                             <div class="sectionHelp">
                                 <fmt:message key='help.desc'/>
                             </div>

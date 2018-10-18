@@ -30,9 +30,7 @@ public class FunctionLibrary {
      *
      * @return function library description
      */
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
 
     /**
      * Set function library description.

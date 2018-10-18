@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Surefire suite">
+<test name="Surefire test">
+    <classes>
+        <class name="org.wso2.carbon.function.mgt.FunctionLibraryManagementAdminServiceTest"/>
+        <class name="org.wso2.carbon.function.mgt.dao.impl.FunctionLibraryDAOImplTest"/>
+        <class name="org.wso2.carbon.function.mgt.internal.FunctionLibraryManagementServiceComponentTest"/>
+        <class name="org.wso2.carbon.function.mgt.model.FunctionLibraryTest"/>
+        <class name="org.wso2.carbon.function.mgt.FunctionLibraryManagementServiceTest"/>
+    </classes>
+</test> <!-- Surefire test -->
+</suite> <!-- Surefire suite -->

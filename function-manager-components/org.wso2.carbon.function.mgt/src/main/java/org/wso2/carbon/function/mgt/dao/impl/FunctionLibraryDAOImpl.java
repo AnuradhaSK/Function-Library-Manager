@@ -81,24 +81,28 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
         Connection connection = IdentityDatabaseUtil.getDBConnection();
         PreparedStatement getFunctionLibStmt = null;
         ResultSet resultSet = null;
-        FunctionLibrary functionlib = new FunctionLibrary();
+       // FunctionLibrary functionlib = new FunctionLibrary();
         try {
             getFunctionLibStmt = connection.prepareStatement(FunctionLibMgtDBQueries.LOAD_FUNCTIONLIB_FROM_TENANTID_AND_NAME);
             getFunctionLibStmt.setInt(1, tenantID);
             getFunctionLibStmt.setString(2, functionLibraryName);
             resultSet = getFunctionLibStmt.executeQuery();
             if (resultSet.next()) {
+                FunctionLibrary functionlib = new FunctionLibrary();
                 functionlib.setFunctionLibraryName(resultSet.getString("NAME"));
                 functionlib.setDescription(resultSet.getString("DESCRIPTION"));
                 functionlib.setFunctionLibraryScript(resultSet.getString("DATA"));
-
+                return functionlib;
+            }
+            else{
+                return null;
             }
         } catch (SQLException e) {
             throw new FunctionLibraryManagementException("Error while reading function library"+ functionLibraryName, e);
         } finally {
             IdentityDatabaseUtil.closeAllConnections(connection,resultSet,getFunctionLibStmt);
         }
-        return functionlib;
+
 
     }
 
@@ -199,7 +203,6 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
 
     }
     public boolean isFunctionLibraryExists (String functionLibraryName, String tenantDomain) throws FunctionLibraryManagementException {
-        System.out.println("Checking the name existance");
         boolean isFunctionLibraryExists = false;
         int tenantID = MultitenantConstants.SUPER_TENANT_ID;
         if (tenantDomain != null) {
@@ -214,7 +217,6 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
 
                 try (ResultSet resultSet = checkFunctionLibraryExistence.executeQuery()) {
                     if (resultSet.next()) {
-                        System.out.println("Function lib Existing");
                         isFunctionLibraryExists=true;
                     }
                 }
@@ -244,36 +246,4 @@ public class FunctionLibraryDAOImpl implements FunctionLibraryDAO {
         }
     }
 
-    /**
-     * Get string from inputStream of a blob
-     *
-     * @param is input stream
-     * @return
-     * @throws IOException
-     */
-    private String getBlobValue(InputStream is) throws IOException {
-
-        if (is != null) {
-            BufferedReader br = null;
-            StringBuilder sb = new StringBuilder();
-            String line;
-            try {
-                br = new BufferedReader(new InputStreamReader(is));
-                while ((line = br.readLine()) != null) {
-                    sb.append(line);
-                }
-            } finally {
-                if (br != null) {
-                    try {
-                        br.close();
-                    } catch (IOException e) {
-                        log.error("Error in retrieving the Blob value", e);
-                    }
-                }
-            }
-
-            return sb.toString();
-        }
-        return null;
-    }
 }

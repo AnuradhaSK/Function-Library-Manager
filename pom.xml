@@ -63,6 +63,16 @@
         <dependency>
             <groupId>org.wso2.carbon.identity.framework</groupId>
             <artifactId>org.wso2.carbon.identity.core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>log4j-over-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
             <version>5.12.54</version>
         </dependency>
         <dependency>
@@ -85,6 +95,59 @@
             <artifactId>axis2-client</artifactId>
             <version>${axis2.wso2.version}</version>
         </dependency>
+
+        <!-- Testing related dependencies -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jmockit</groupId>
+            <artifactId>jmockit</artifactId>
+            <scope>test</scope>
+            <version>${jmockit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <classifier>runtime</classifier>
+            <version>${jacoco.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-testng</artifactId>
+            <version>${org.powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>${org.powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-testng-common</artifactId>
+            <version>${org.powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2database.version}</version>
+        <scope>test</scope>
+    </dependency>
+
+
+        <!-- Common test utility -->
+        <dependency>
+        <groupId>org.wso2.carbon.identity.framework</groupId>
+        <artifactId>org.wso2.carbon.identity.testutil</artifactId>
+        <version>5.12.153</version>
+        </dependency>
+
     </dependencies>
 
     <pluginRepositories>
@@ -184,6 +247,27 @@
         <equinox.osgi.services.version>3.5.100.v20160504-1419</equinox.osgi.services.version>
 
         <carbon.identity.functionlib.package.import.version>${project.version}</carbon.identity.functionlib.package.import.version>
+        <carbon.identity.framework.version>5.12.118</carbon.identity.framework.version>
+
+        <!-- Unit test versions -->
+        <testng.version>6.9.10</testng.version>
+        <jacoco.version>0.7.9</jacoco.version>
+        <maven.surefire.plugin.version>2.18.1</maven.surefire.plugin.version>
+        <slf4j.api.version>1.7.12</slf4j.api.version>
+        <org.powermock.version>1.7.3</org.powermock.version>
+
+        <wso2.maven.compiler.source>1.8</wso2.maven.compiler.source>
+        <wso2.maven.compiler.target>1.8</wso2.maven.compiler.target>
+
+        <siddhi.version>4.1.17</siddhi.version>
+        <siddhi.version.range>[4.1.17,5.0.0)</siddhi.version.range>
+        <quartz.version>2.1.1.wso2v1</quartz.version>
+        <disruptor.orbit.version>3.3.2.wso2v2</disruptor.orbit.version>
+        <antlr.version>4.5</antlr.version>
+        <guava.version>19.0</guava.version>
+        <snakeyaml.version>1.11</snakeyaml.version>
+        <h2database.version>1.3.175</h2database.version>
+        <jmockit.version>1.35</jmockit.version>
     </properties>
 
 

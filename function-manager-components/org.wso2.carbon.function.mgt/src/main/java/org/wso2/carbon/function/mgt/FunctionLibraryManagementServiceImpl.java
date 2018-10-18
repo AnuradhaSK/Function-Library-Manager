@@ -41,7 +41,6 @@ public class FunctionLibraryManagementServiceImpl implements FunctionLibraryMana
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
 
         if (functionLibraryDAO.isFunctionLibraryExists(functionLibrary.getFunctionLibraryName(), tenantDomain)) {
-            System.out.println("Thrown--------Already a function library available with the same name.");
             throw new FunctionLibraryManagementException("Already a function library available with the same name.");
         }
 
@@ -86,7 +85,6 @@ public class FunctionLibraryManagementServiceImpl implements FunctionLibraryMana
         FunctionLibraryDAO functionLibraryDAO = new FunctionLibraryDAOImpl();
 
         if ( !functionLibrary.getFunctionLibraryName().equals(oldFunctionLibraryName) && functionLibraryDAO.isFunctionLibraryExists(functionLibrary.getFunctionLibraryName(), tenantDomain)) {
-            System.out.println("Thrown--------Already a function library available with the same name.");
             throw new FunctionLibraryManagementException("Already a function library available with the same name.");
         }
 
